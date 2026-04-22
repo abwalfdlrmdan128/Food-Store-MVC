@@ -1,0 +1,78 @@
+﻿@model FoodProject.Data.Models.Food
+@{
+    ViewData["Title"] = "FoodUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:600px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:20px;">✏ Food Update</h1>
+
+    <form class="form-group" action="FoodUpdate" asp-controller="Food" method="post" enctype="multipart/form-data">
+
+        <input name="FoodID" value="@Model.FoodID" type="hidden" />
+
+        <label style="font-weight:bold;">Food Name</label>
+        @Html.TextBoxFor(x=>x.Name,new{
+        @class = "form-control",
+                style = "border-radius:8px; margin-bottom:5px;"
+                })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+        <br />
+
+        <label style="font-weight:bold;">Stock</label>
+        @Html.TextBoxFor(x=>x.Stock,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <label style="font-weight:bold;">Price</label>
+        @Html.TextBoxFor(x=>x.Price,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <label style="font-weight:bold;">Image</label>
+        <input type="file" name="ImageURL"
+               style="display:block; width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;" />
+        <br />
+
+        <label style="font-weight:bold;">Category</label>
+        <div style="border-radius:8px; overflow:hidden;">
+            @await Component.InvokeAsync("CategoryList")
+        </div>
+        <br />
+
+        <label style="font-weight:bold;">Description</label>
+        @Html.TextAreaFor(x=>x.Description,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <button id="btnUpdate"
+                style="width:100%; background:#ffc107; color:black; padding:12px;
+                       border:none; border-radius:10px; font-size:16px;
+                       cursor:pointer; transition:0.3s;">
+            🔄 Update
+        </button>
+
+    </form>
+</div>
+
+<script>
+    try {
+        const btnUpdate = document.querySelector('#btnUpdate');
+        btnUpdate.addEventListener('click', () => {
+            alert('Food Updated successfully');
+        })
+    }
+    catch (err) {
+        alert(err);
+    }
+</script>

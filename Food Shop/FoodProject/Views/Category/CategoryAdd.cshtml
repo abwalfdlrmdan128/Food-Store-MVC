@@ -1,0 +1,96 @@
+﻿@model FoodProject.Data.Models.Category
+@{
+    ViewData["Title"] = "CategoryAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:600px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:20px;">📂 Category Add</h1>
+
+    @using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+    {
+        <label style="font-weight:bold;">Category Name</label>
+        @Html.TextBoxFor(x=>x.CategoryName,new{
+        @class = "form-control",
+        style = "border-radius:8px;"
+        })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <br />
+
+    <label style="font-weight:bold;">Category Description</label>
+    @Html.TextAreaFor(x=>x.CategoryDescription,8,3,new{
+        @class = "form-control",
+        style = "border-radius:8px;"
+        })
+    <br />
+
+    <button id="btnSaveMain"
+            style="width:100%; background:#17a2b8; color:white; padding:12px;
+                       border:none; border-radius:10px; font-size:16px;">
+        💾 Save
+    </button>
+        }
+</div>
+
+<!-- Button to open modal -->
+<div style="text-align:center; margin-top:20px;">
+    <button style="padding:10px 20px; border-radius:10px; border:1px solid #333; background:white; cursor:pointer;"
+            data-toggle="modal" data-target="#Modal1">
+        ➕ Repeat Add
+    </button>
+</div>
+
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="dialog" id="Modal1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius:15px;">
+
+            <div class="modal-header" style="background:#007bff; color:white;">
+                <h5 class="modal-title">New Category</h5>
+                <button type="button" class="close" data-dismiss="modal"
+                        style="color:white; font-size:20px;">
+                    &times;
+                </button>
+            </div>
+
+            <div class="modal-body" style="padding:20px;">
+                @using (Html.BeginForm("CategoryAdd", "Category", FormMethod.Post))
+                {
+                    <label style="font-weight:bold;">Category Name</label>
+                    @Html.TextBoxFor(x=>x.CategoryName,new{
+                    @class = "form-control",
+                                style = "border-radius:8px;"
+                                })
+                @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+                <br />
+
+                <label style="font-weight:bold;">Category Description</label>
+                @Html.TextAreaFor(x=>x.CategoryDescription,8,3,new{
+                                @class = "form-control",
+                                style = "border-radius:8px;"
+                                })
+                <br />
+
+                <button id="btnSaveModal"
+                        style="width:100%; background:#17a2b8; color:white; padding:10px;
+                                   border:none; border-radius:10px;">
+                    💾 Save
+                </button>
+                                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#btnSaveMain, #btnSaveModal").click(function () {
+            alert("Category added successfully");
+        });
+    });
+</script>

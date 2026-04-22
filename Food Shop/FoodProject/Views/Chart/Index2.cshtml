@@ -1,0 +1,102 @@
+﻿@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+">
+
+    <h2 style="
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: #198754;">
+        📊 Category Stock Column Chart
+    </h2>
+
+    <div id="ColumnChart_div" style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+    "></div>
+
+</div>
+
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: '@Url.Action("VisualizeProductResult", "Chart")',
+            success: function (result) {
+                google.charts.load('current', { packages: ['corechart'] });
+
+                google.charts.setOnLoadCallback(function () {
+                    drawChart(result);
+                });
+            }
+        });
+    });
+
+    function drawChart(result) {
+
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'Category');
+        data.addColumn('number', 'Stock');
+
+        var dataArray = [];
+
+        $.each(result, function (i, obj) {
+            dataArray.push([obj.categoryName, obj.stock]);
+        });
+
+        data.addRows(dataArray);
+
+        var options = {
+            title: "Category Stock Overview",
+            width: 850,
+            height: 450,
+
+            backgroundColor: 'transparent',
+
+            hAxis: {
+                title: 'Category',
+                textStyle: { fontSize: 12 },
+                slantedText: true,
+                slantedTextAngle: 40
+            },
+
+            vAxis: {
+                title: 'Stock',
+                minValue: 0
+            },
+
+            legend: { position: "none" },
+
+            titleTextStyle: {
+                fontSize: 18,
+                bold: true
+            },
+
+            colors: ['#198754']   
+        };
+
+        var chart = new google.visualization.ColumnChart(
+            document.getElementById('ColumnChart_div')
+        );
+
+        chart.draw(data, options);
+    }
+</script>

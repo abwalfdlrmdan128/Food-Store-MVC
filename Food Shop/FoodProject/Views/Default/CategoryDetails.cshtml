@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "CategoryDetails";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="top-brands">
+    <div class="container">
+        <h3>Our Products</h3>
+        @await Component.InvokeAsync("FoodListByCategory", new { id = @ViewBag.ID })
+    </div>
+</div>

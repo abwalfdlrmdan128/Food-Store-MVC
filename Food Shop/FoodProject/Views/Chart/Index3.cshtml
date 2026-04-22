@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Index3";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+">
+
+    <h2 style="
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 25px;
+        color: #ff9800;">
+        🍔 Food Stock Pie Chart
+    </h2>
+
+    <div id="Piechart_div" style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+    "></div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            url: '@Url.Action("VisualizeFoodResult", "Chart")',
+            success: function (result) {
+
+                google.charts.load('current', { packages: ['corechart'] });
+
+                google.charts.setOnLoadCallback(function () {
+                    drawChart(result);
+                });
+            }
+        });
+    });
+
+    function drawChart(result) {
+
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'Food');
+        data.addColumn('number', 'Stock');
+
+        var dataArray = [];
+
+        $.each(result, function (i, obj) {
+            dataArray.push([obj.foodName, obj.stock]);
+        });
+
+        data.addRows(dataArray);
+
+        var options = {
+            title: "Food Stock Distribution",
+            width: 850,
+            height: 500,
+            backgroundColor: 'transparent',
+
+            pieHole: 0.4, 
+
+            legend: {
+                position: 'right',
+                textStyle: { fontSize: 14 }
+            },
+
+            titleTextStyle: {
+                fontSize: 18,
+                bold: true
+            }
+        };
+
+        var chart = new google.visualization.PieChart(
+            document.getElementById('Piechart_div')
+        );
+
+        chart.draw(data, options);
+    }
+</script>

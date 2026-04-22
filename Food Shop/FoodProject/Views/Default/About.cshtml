@@ -1,0 +1,36 @@
+﻿@model List<FoodProject.Data.Models.About>
+
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div class="privacy about" style="margin-bottom:50px;">
+
+        <!-- TITLE FIRST -->
+        <h3 style="text-align:center; margin-bottom:30px;">
+            @item.AboutTitle
+        </h3>
+
+        <div class="row agile_about_grids" style="display:flex; align-items:center; gap:30px;">
+
+            <!-- IMAGE -->
+            <div class="col-md-6 agile_about_grid_right" style="padding:15px;">
+                <img src="~/Resimler/@item.AboutImageURL"
+                     alt=""
+                     class="img-responsive"
+                     style="border-radius:10px; width:100%;" />
+            </div>
+
+            <!-- TEXT -->
+            <div class="col-md-6 agile_about_grid_left" style="padding:15px;">
+                <p style="line-height:1.8; font-size:16px;">
+                    @item.AboutText
+                </p>
+            </div>
+
+        </div>
+    </div>
+}

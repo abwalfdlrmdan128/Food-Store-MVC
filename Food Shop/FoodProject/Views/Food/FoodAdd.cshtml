@@ -1,0 +1,72 @@
+﻿@model FoodProject.Data.FoodImage
+@{
+    ViewData["Title"] = "FoodAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:600px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:20px;">🍔 Food Add Page</h1>
+
+    <form class="form-group" action="FoodAdd" asp-controller="Food" method="post" enctype="multipart/form-data">
+
+        <label style="font-weight:bold;">Food Name</label>
+        @Html.TextBoxFor(x=>x.Name,new{
+        @class = "form-control",
+                style = "border-radius:8px; margin-bottom:5px;"
+                })
+        @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+        <br />
+
+        <label style="font-weight:bold;">Stock</label>
+        @Html.TextBoxFor(x=>x.Stock,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <label style="font-weight:bold;">Price</label>
+        @Html.TextBoxFor(x=>x.Price,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <label style="font-weight:bold;">Choose Image</label>
+        <input type="file" name="ImageURL"
+               style="display:block; padding:8px; border-radius:8px; border:1px solid #ccc; width:100%;" />
+        <br />
+
+        <label style="font-weight:bold;">Category</label>
+        @Html.DropDownListFor(x=>x.CategoryID,(List<SelectListItem>)ViewBag.categories,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <label style="font-weight:bold;">Description</label>
+        @Html.TextAreaFor(x=>x.Description,10,8,new{
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+        <br />
+
+        <button id="btnSave"
+                style="width:100%; background:green; color:white; padding:12px;
+                       border:none; border-radius:10px; font-size:16px;
+                       cursor:pointer; transition:0.3s;">
+            💾 Save
+        </button>
+    </form>
+</div>
+
+<script>
+    $(function(){
+        $("#btnSave").click(function(){
+            alert("Food Added Successfully");
+        });
+    });
+</script>

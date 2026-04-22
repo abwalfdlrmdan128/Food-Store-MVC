@@ -1,0 +1,48 @@
+﻿@model FoodProject.Data.Models.Category
+@{
+    ViewData["Title"] = "CategoryGet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:600px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:20px;">✏ Category Update</h1>
+
+    @using (Html.BeginForm("CategoryUpdate", "Category", FormMethod.Post))
+    {
+        @Html.HiddenFor(x => x.CategoryID)
+
+        <label style="font-weight:bold;">Category Name</label>
+        @Html.TextBoxFor(x=>x.CategoryName,new{
+        @class = "form-control",
+        style = "border-radius:8px;"
+        })
+    @Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red" })
+    <br />
+
+    <label style="font-weight:bold;">Category Description</label>
+    @Html.TextBoxFor(x=>x.CategoryDescription,new{
+        @class = "form-control",
+        style = "border-radius:8px;"
+        })
+    <br />
+
+    <button id="btnUpdate"
+            style="width:100%; background:#ffc107; color:black; padding:12px;
+                       border:none; border-radius:10px; font-size:16px;
+                       cursor:pointer;">
+        🔄 Update
+    </button>
+        }
+</div>
+
+<script>
+    $(function () {
+        $("#btnUpdate").click(function () {
+            alert("Category updated successfully");
+        });
+    });
+</script>

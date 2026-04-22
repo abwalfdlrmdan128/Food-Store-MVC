@@ -1,0 +1,92 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IPagedList<FoodProject.Data.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:1100px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:25px;">🧾 Order List</h1>
+
+    <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; text-align:center;">
+
+            <thead>
+                <tr style="background:#343a40; color:white;">
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                    <th>Complete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td>@order.AppUser.NameSurname</td>
+                        <td style="color:#007bff;">@order.Payment.Email</td>
+                        <td>@order.TotalPrice</td>
+
+                        <!-- Status -->
+                        <td>
+                            <span style="padding:5px 10px; border-radius:8px;
+                                    background:@(order.Status == "Completed" ? "#28a745" : "#ffc107");
+                                    color:white;">
+                                @order.Status
+                            </span>
+                        </td>
+
+                        <!-- Details -->
+                        <td>
+                            <a href="/AdminOrders/OrderDetails/@order.OrderID"
+                               style="background:#17a2b8; color:white; padding:6px 12px;
+                                          border-radius:8px; text-decoration:none;">
+                                🔍 Details
+                            </a>
+                        </td>
+
+                        <!-- Complete -->
+                        <td>
+                            @if (order.Status != "Completed")
+                            {
+                                <form asp-action="OrderCompleted" asp-route-id="@order.OrderID" method="post">
+                                    <button onclick="return confirmComplete();"
+                                            style="background:#28a745; color:white; padding:6px 12px;
+                                                           border-radius:8px; border:none;">
+                                        ✅ Complete
+                                    </button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span style="color:gray;">✔ Done</span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div style="text-align:center; margin-top:20px;">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+
+</div>
+
+<script>
+    function confirmComplete(){
+        return confirm("Are you sure you want to mark this order as completed?");
+    }
+</script>

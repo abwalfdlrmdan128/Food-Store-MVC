@@ -1,0 +1,106 @@
+﻿@model FoodProject.Data.Models.Order
+
+@{
+    ViewData["Title"] = "OrderDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:1100px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:30px;">🧾 Order Details</h1>
+
+    <div style="display:flex; gap:30px; flex-wrap:wrap;">
+
+        <!-- Customer Info -->
+        <div style="flex:1; min-width:300px;">
+            <div style="border-radius:15px; overflow:hidden;
+                        box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+                <div style="background:#007bff; color:white; padding:15px; font-weight:bold;">
+                    👤 Customer Information
+                </div>
+
+                <ul style="list-style:none; margin:0; padding:0;">
+                    <li style="padding:10px;"><strong>Name:</strong> @Model.AppUser.NameSurname</li>
+                    <li style="padding:10px;"><strong>Email:</strong> @Model.Payment.Email</li>
+                    <li style="padding:10px;"><strong>Mobile:</strong> @Model.Payment.MobileNumber</li>
+                    <li style="padding:10px;"><strong>City:</strong> @Model.Payment.City</li>
+                    <li style="padding:10px;"><strong>Address:</strong> @Model.Payment.Address</li>
+                    <li style="padding:10px;">
+                        <strong>Total:</strong>
+                        <span style="color:#28a745;">$@Model.TotalPrice</span>
+                    </li>
+                    <li style="padding:10px;">
+                        <strong>Status:</strong>
+                        <span style="color:@(Model.Status == "Completed" ? "green" : "orange")">
+                            @Model.Status
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Order Items -->
+        <div style="flex:2; min-width:300px;">
+            <div style="border-radius:15px; padding:15px;
+                        box-shadow:0 5px 15px rgba(0,0,0,0.1);
+                        background:#fff;">
+
+                <table style="width:100%; text-align:center;">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Food</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.OrderDetails)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@item.FoodImage" width="60" style="border-radius:8px;" />
+                                </td>
+                                <td>@item.FoodName</td>
+                                <td>$@item.FoodPrice</td>
+                                <td>@item.FoodQuantity</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Complete Button -->
+    <div style="text-align:center; margin-top:30px;">
+        @if (Model.Status != "Completed")
+        {
+            <form asp-action="OrderCompleted" asp-route-id="@Model.OrderID" method="post">
+                <button onclick="return confirmComplete();"
+                        style="background:#28a745; color:white; padding:12px 25px;
+                                   border-radius:10px; border:none;
+                                   box-shadow:0 5px 10px rgba(0,0,0,0.2);">
+                    ✅ Complete Order
+                </button>
+            </form>
+        }
+        else
+        {
+            <span style="color:gray; font-size:18px;">✔ Order Already Completed</span>
+        }
+    </div>
+
+</div>
+
+<script>
+    function confirmComplete() {
+        return confirm("Are you sure you want to complete this order?");
+    }
+</script>

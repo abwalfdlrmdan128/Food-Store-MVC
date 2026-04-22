@@ -1,0 +1,17 @@
+StieLayout:
+1- contact
+2- about
+3- categoryDetails
+4- ProductDetails
+5- Products
+6- 
+
+
+
+Default controller  :  controller function and views are complete rather than Arma function .
+About Controller :  controller function and views are compeleted 
+category controller : controller function and views are compeleted 
+contact controller : controller and function are done and views 
+login controller : controller function are done and there views 
+register controller : controller ad functon are done  and there views  
+Food controller : controller ad functon are done  and there views  

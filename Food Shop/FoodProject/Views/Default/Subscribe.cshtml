@@ -1,0 +1,25 @@
+﻿<div class="newsletter">
+    <div class="container">
+        <div class="w3agile_newsletter_left">
+            <h3>Subscribe to our newsletter.</h3>
+        </div>
+        <div class="w3agile_newsletter_right">
+            <form action="/Default/Subscribe/" method="post">
+                <input id="txtmail" type="email" class="mail" name="EMail" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}" required="">
+                <input id="btn" type="submit" value="Subscribe" class="subscribe">
+            </form>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(".subscribe").click(function (responseTxt, statusTxt, xhr) {
+            if (statusTxt == "success")
+                alert('You have successfully subscribed to our newsletter.');
+            else if(statusTxt == "error")
+                alert("An error occurred.");
+        });
+    });
+</script>

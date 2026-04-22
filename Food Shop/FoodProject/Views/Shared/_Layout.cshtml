@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FoodStore Admin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    @*icon*@
+    <link rel="icon" type="image/png" href="~/Login/images/icons/admin.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/Default/Index/">FoodStore</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/Chart/Statistics/">Statistics</a></li>
+                <li><a href="/AdminOrders/Index/">Orders</a></li>
+                <li><a href="/Category/Index/">Categories</a></li>
+                <li><a href="/Food/Index/">Foods</a></li>
+                <li><a href="/About/Index/">About</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="contactsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contacts <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="contactsDropdown">
+                        <li role="presentation"><a class="dropdown-item" role="menuitem" href="/Contact/Index/">Contact</a></li>
+                        <li role="presentation"><a class="dropdown-item" role="menuitem" href="/Newsletter/Index/">Newsletter</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="chartsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Google Charts <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="chartsDropdown">
+                        <li role="presentation"><a class="dropdown-item" role="menuitem" href="/Chart/Index/">Pie Chart</a></li>
+                        <li role="presentation"><a class="dropdown-item" role="menuitem" href="/Chart/Index2/">Column Chart</a></li>
+                        <li role="presentation"><a class="dropdown-item" role="menuitem" href="/Chart/Index3/">Dynamic Chart</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/Settings/Index/">Settings</a></li>
+                <li><a href="/Login/LogOut/">Log Out</a></li>
+            </ul>
+            @await Component.InvokeAsync("ShowAdminName")
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

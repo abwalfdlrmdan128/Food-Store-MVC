@@ -1,0 +1,112 @@
+﻿@model FoodProject.Data.UserSignUpViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register to FoodStore</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="~/Login/images/icons/login.png" />
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Login/css/main.css">
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-t-85 p-b-20">
+                <form class="login100-form validate-form" method="post" controller="Register" action="Index" novalidate>
+
+                    <span class="login100-form-title p-b-70">
+                        Register to FoodStore
+                    </span>
+
+                    <span class="login100-form-avatar">
+                        <img src="~/Login/images/login2.jpg" alt="Avatar">
+                    </span>
+
+                    <!-- Full Name -->
+                    <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter your full name">
+                        @Html.TextBoxFor(x => x.NameSurname, new { @class = "input100", placeholder = "Full Name", required = "required" })
+                        <span class="text-danger">
+                            @Html.ValidationMessageFor(x => x.NameSurname)
+                        </span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="wrap-input100 validate-input m-b-35" data-validate="Enter a valid email">
+                        @Html.TextBoxFor(x => x.Mail, new { @class = "input100", type = "email", placeholder = "Email", required = "required" })
+                        <span class="text-danger">
+                            @Html.ValidationMessageFor(x => x.Mail)
+                        </span>
+                    </div>
+
+                    <!-- Username -->
+                    <div class="wrap-input100 validate-input m-b-50" data-validate="Enter username">
+                        @Html.TextBoxFor(x => x.UserName, new { @class = "input100", placeholder = "Username", required = "required" })
+                        <span class="text-danger">
+                            @Html.ValidationMessageFor(x => x.UserName)
+                        </span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="wrap-input100 validate-input m-b-35" data-validate="Enter password">
+                        @Html.PasswordFor(x => x.Password, new { @class = "input100", placeholder = "Password", required = "required", minlength = "3" })
+                        <span class="text-danger">
+                            @Html.ValidationMessageFor(x => x.Password)
+                        </span>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="wrap-input100 validate-input m-b-35" data-validate="Confirm password">
+                        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "input100", placeholder = "Confirm Password", required = "required" })
+                        <span class="text-danger">
+                            @Html.ValidationMessageFor(x => x.ConfirmPassword)
+                        </span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                            Register
+                        </button>
+                    </div>
+
+                    <!-- Link back to Home -->
+                    <ul class="login-more p-t-100">
+                        <li class="m-b-8">
+                            <a href="/Default/Index/" class="txt2">Back to Home</a>
+                        </li>
+                    </ul>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="dropDownSelect1"></div>
+
+    <!-- Scripts -->
+    <script src="~/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Login/vendor/animsition/js/animsition.min.js"></script>
+    <script src="~/Login/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Login/vendor/select2/select2.min.js"></script>
+    <script src="~/Login/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/Login/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="~/Login/vendor/countdowntime/countdowntime.js"></script>
+    <script src="~/Login/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿@model List<FoodProject.Data.Models.Order>
+
+@{
+    ViewData["Title"] = "UserOrders";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<div class="banner">
+    <div class="w3l_banner_nav_right">
+        <div class="privacy about">
+
+            <h3>Your Orders (@Model.Count)</h3>
+
+            @if (Model.Any())
+            {
+                foreach (var order in Model)
+                {
+                    <div style="margin-bottom:30px; padding:15px; border:1px solid #ddd; border-radius:10px;">
+
+                        <!-- Order Header -->
+                        <div style="margin-bottom:10px;">
+                            <strong>Order ID:</strong> @order.OrderID |
+                            <strong>Total:</strong> $@order.TotalPrice |
+                            <strong>Status:</strong>
+                            <span style="color:@(order.Status == "Completed" ? "green" : "orange")">
+                                @order.Status
+                            </span>
+                        </div>
+
+                        <!-- Order Items -->
+                        <table class="timetable_sub">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Image</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in order.OrderDetails)
+                                {
+                                    <tr>
+                                        <td>@item.FoodName</td>
+
+                                        <td>
+                                            <img src="~/Resimler/@item.FoodImage"
+                                                 style="width:60px; border-radius:8px;" />
+                                        </td>
+
+                                        <td>@item.FoodQuantity</td>
+                                        <td>$@item.FoodPrice</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                }
+            }
+            else
+            {
+                <p>You have no orders yet.</p>
+            }
+
+            <br />
+
+            <a class="btn btn-info" href="/Order/BasketDetails/" style="margin-top:8px;">
+                Back to Basket
+            </a>
+
+        </div>
+    </div>
+</div>

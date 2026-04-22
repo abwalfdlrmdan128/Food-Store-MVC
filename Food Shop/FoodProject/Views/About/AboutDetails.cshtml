@@ -1,0 +1,48 @@
+﻿@model FoodProject.Data.Models.About
+@{
+    ViewData["Title"] = "About Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="max-width:700px; margin:40px auto; padding:25px;
+            border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:#fff;">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:25px;">
+        📄 About Details
+    </h1>
+
+    @if (Model != null)
+    {
+        <!-- Image -->
+        <div style="text-align:center; margin-bottom:20px;">
+            <img src="@Url.Content("/Resimler/" + Model.AboutImageURL)"
+                 style="max-width:100%; height:auto; border-radius:12px;" />
+        </div>
+
+        <!-- Title -->
+        <div style="margin-bottom:15px;">
+            <h3 style="color:#555;">Title</h3>
+            <p style="font-size:18px; color:#222;">
+                @Model.AboutTitle
+            </p>
+        </div>
+
+        <hr />
+
+        <!-- Text -->
+        <div style="margin-top:15px;">
+            <h3 style="color:#555;">Description</h3>
+            <p style="font-size:16px; line-height:1.8; color:#444;">
+                @Model.AboutText
+            </p>
+        </div>
+    }
+    else
+    {
+        <p style="text-align:center; color:red;">
+            No About data found.
+        </p>
+    }
+
+</div>

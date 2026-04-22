@@ -1,0 +1,69 @@
+﻿@model FoodProject.Data.Models.About
+@{
+    ViewData["Title"] = "AboutUpdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="max-width:600px; margin:40px auto; padding:25px;
+            border:2px solid #e0e0e0; border-radius:15px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.1);
+            background:linear-gradient(135deg,#ffffff,#f9f9f9);">
+
+    <h1 style="text-align:center; color:#333; margin-bottom:20px;">✏ About Update</h1>
+
+    <form class="form-group" action="AboutUpdate" asp-controller="About" method="post" enctype="multipart/form-data">
+
+        @Html.HiddenFor(x => x.AboutID)
+
+        <label style="font-weight:bold;">About Title</label>
+        @Html.TextBoxFor(x => x.AboutTitle, new {
+        @class = "form-control",
+                style = "border-radius:8px;"
+                })
+
+        <br />
+
+        <label style="font-weight:bold;">About Text</label>
+        @Html.TextAreaFor(x => x.AboutText, 5, 3, new {
+                @class = "form-control",
+                style = "border-radius:8px;"
+                })
+
+        <br />
+
+        <!-- Current Image -->
+        <div style="margin-bottom:15px; text-align:center;">
+            <label style="font-weight:bold;">Current Image</label><br />
+            <img src="/Resimler/@Model.AboutImageURL"
+                 style="width:220px; height:140px; object-fit:cover;
+                        border-radius:12px;
+                        box-shadow:0 5px 15px rgba(0,0,0,0.2);" />
+        </div>
+
+        <label style="font-weight:bold;">Change Image (optional)</label>
+        <input type="file" name="AboutImageURL"
+               style="display:block; width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;" />
+
+        <br />
+
+        <button id="btnUpdate"
+                style="width:100%; background:#28a745; color:white; padding:12px;
+                       border:none; border-radius:10px; font-size:16px;
+                       cursor:pointer; transition:0.3s;">
+            🔄 Update
+        </button>
+
+    </form>
+</div>
+
+<!-- Confirmation before submit -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(function () {
+        $("#btnUpdate").click(function (e) {
+            if (!confirm("Are you sure you want to update this record?")) {
+                e.preventDefault();
+            }
+        });
+    });
+</script>
