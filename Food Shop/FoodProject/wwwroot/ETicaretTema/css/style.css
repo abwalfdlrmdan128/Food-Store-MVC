@@ -163,16 +163,17 @@ ul.dropdown-menu.drp-mnu li a i {
 	float:left;
 	margin-right: 7em;
 }
-.w3ls_logo_products_left h1 a{
-	font-size: 1.5em;
-    color: #212121;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    background: url(../images/img-sp.png) no-repeat 54px 6px;
-    line-height: 1;
-    height: 97px;
-}
+	.w3ls_logo_products_left h1 a {
+		font-size: 1.5em;
+		color: #212121;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: block;
+/*		background: url(../images/download.jpg);*/
+		background: url('../images/download.jpg') no-repeat 54px 6px;
+		line-height: 1;
+		height: 97px;
+	}
 .profile_details_drop a {
     display: block;
 	padding-top:1em;

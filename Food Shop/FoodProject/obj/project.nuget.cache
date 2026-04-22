@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V+KYxsr/0XA=",
+  "dgSpecHash": "4mBdHeGM80A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\UG\\Documents\\GitHub\\Shoping-Food-MVC\\Food Shop\\FoodProject\\FoodProject.csproj",
+  "projectFilePath": "C:\\Users\\UG\\Documents\\GitHub\\Food Store MVC\\Food Shop\\FoodProject\\FoodProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\UG\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\UG\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.0.0\\microsoft.aspnetcore.antiforgery.2.0.0.nupkg.sha512",
