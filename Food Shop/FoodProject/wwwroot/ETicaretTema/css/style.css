@@ -170,7 +170,7 @@ ul.dropdown-menu.drp-mnu li a i {
 		text-transform: uppercase;
 		display: block;
 /*		background: url(../images/download.jpg);*/
-		background: url('../images/download.jpg') no-repeat 54px 6px;
+		background: url(../images/download.jpg) no-repeat 54px 6px;
 		line-height: 1;
 		height: 97px;
 	}

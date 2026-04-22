@@ -446,9 +446,9 @@
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food Store MVC\\Food Shop\\FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
               "RelativeDocumentMoniker": "FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food Store MVC\\Food Shop\\FoodProject\\wwwroot\\ETicaretTema\\css\\style.css*",
-              "RelativeToolTip": "FoodProject\\wwwroot\\ETicaretTema\\css\\style.css*",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAK4AAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food Store MVC\\Food Shop\\FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
+              "RelativeToolTip": "FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAAA8BAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2026-04-14T18:54:03.084Z",
               "EditorCaption": ""
@@ -499,8 +499,7 @@
               "RelativeToolTip": "FoodProject\\wwwroot\\Login\\vendor\\animate\\animate.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-04-22T19:01:10.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T19:01:10.771Z"
             },
             {
               "$type": "Document",
