@@ -23,70 +23,106 @@
 </head>
 <body>
 
-    <div class="limiter">
+    <div class="limiter" style="background: linear-gradient(135deg,#ff6a00,#ee0979); min-height:100vh; display:flex; justify-content:center; align-items:center;">
+
         <div class="container-login100">
-            <div class="wrap-login100 p-t-85 p-b-20">
+
+            <div class="wrap-login100 p-t-85 p-b-20"
+                 style="background:#fff; border-radius:20px; padding:40px; width:420px; box-shadow:0 15px 40px rgba(0,0,0,0.2);">
+
                 <form class="login100-form validate-form" method="post" controller="Register" action="Index" novalidate>
 
-                    <span class="login100-form-title p-b-70">
+                    <span class="login100-form-title p-b-70"
+                          style="font-size:26px; font-weight:bold; text-align:center; display:block;">
                         Register to FoodStore
                     </span>
 
-                    <span class="login100-form-avatar">
-                        <img src="~/Login/images/login2.jpg" alt="Avatar">
+                    <span class="login100-form-avatar" style="display:flex; justify-content:center;">
+                        <img src="~/Login/images/login2.jpg"
+                             style="width:100px; height:100px; border-radius:50%; object-fit:cover; border:3px solid #ff6a00;">
                     </span>
 
                     <!-- Full Name -->
-                    <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter your full name">
-                        @Html.TextBoxFor(x => x.NameSurname, new { @class = "input100", placeholder = "Full Name", required = "required" })
+                    <div class="wrap-input100 m-t-85 m-b-35">
+                        @Html.TextBoxFor(x => x.NameSurname, new {
+                        @class = "input100",
+                                                placeholder = "Full Name",
+                                                required = "required",
+                                                style = "width:100%; height:45px; border-radius:10px; padding:10px; border:1px solid #ccc;"
+                                                })
                         <span class="text-danger">
                             @Html.ValidationMessageFor(x => x.NameSurname)
                         </span>
                     </div>
 
                     <!-- Email -->
-                    <div class="wrap-input100 validate-input m-b-35" data-validate="Enter a valid email">
-                        @Html.TextBoxFor(x => x.Mail, new { @class = "input100", type = "email", placeholder = "Email", required = "required" })
+                    <div class="wrap-input100 m-b-35">
+                        @Html.TextBoxFor(x => x.Mail, new {
+                                                @class = "input100",
+                                                type = "email",
+                                                placeholder = "Email",
+                                                required = "required",
+                                                style = "width:100%; height:45px; border-radius:10px; padding:10px; border:1px solid #ccc;"
+                                                })
                         <span class="text-danger">
                             @Html.ValidationMessageFor(x => x.Mail)
                         </span>
                     </div>
 
                     <!-- Username -->
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Enter username">
-                        @Html.TextBoxFor(x => x.UserName, new { @class = "input100", placeholder = "Username", required = "required" })
+                    <div class="wrap-input100 m-b-50">
+                        @Html.TextBoxFor(x => x.UserName, new {
+                                                @class = "input100",
+                                                placeholder = "Username",
+                                                required = "required",
+                                                style = "width:100%; height:45px; border-radius:10px; padding:10px; border:1px solid #ccc;"
+                                                })
                         <span class="text-danger">
                             @Html.ValidationMessageFor(x => x.UserName)
                         </span>
                     </div>
 
                     <!-- Password -->
-                    <div class="wrap-input100 validate-input m-b-35" data-validate="Enter password">
-                        @Html.PasswordFor(x => x.Password, new { @class = "input100", placeholder = "Password", required = "required", minlength = "3" })
+                    <div class="wrap-input100 m-b-35" style="position:relative;">
+                        @Html.PasswordFor(x => x.Password, new {
+                                                @class = "input100",
+                                                placeholder = "Password",
+                                                required = "required",
+                                                style = "width:100%; height:45px; border-radius:10px; padding:10px; border:1px solid #ccc;"
+                                                })
                         <span class="text-danger">
                             @Html.ValidationMessageFor(x => x.Password)
                         </span>
                     </div>
 
                     <!-- Confirm Password -->
-                    <div class="wrap-input100 validate-input m-b-35" data-validate="Confirm password">
-                        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "input100", placeholder = "Confirm Password", required = "required" })
+                    <div class="wrap-input100 m-b-35">
+                        @Html.PasswordFor(x => x.ConfirmPassword, new {
+                                                @class = "input100",
+                                                placeholder = "Confirm Password",
+                                                required = "required",
+                                                style = "width:100%; height:45px; border-radius:10px; padding:10px; border:1px solid #ccc;"
+                                                })
                         <span class="text-danger">
                             @Html.ValidationMessageFor(x => x.ConfirmPassword)
                         </span>
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="container-login100-form-btn">
-                        <button type="submit" class="login100-form-btn">
+                    <div class="container-login100-form-btn" style="margin-top:20px;">
+                        <button type="submit"
+                                class="login100-form-btn"
+                                style="width:100%; height:45px; border:none; border-radius:10px; background:linear-gradient(135deg,#ff6a00,#ee0979); color:white; font-weight:bold; transition:0.3s;">
                             Register
                         </button>
                     </div>
 
-                    <!-- Link back to Home -->
-                    <ul class="login-more p-t-100">
+                    <!-- Link -->
+                    <ul class="login-more p-t-100" style="text-align:center; margin-top:20px;">
                         <li class="m-b-8">
-                            <a href="/Default/Index/" class="txt2">Back to Home</a>
+                            <a href="/Default/Index/" style="color:#555; text-decoration:none;">
+                                ← Back to Home
+                            </a>
                         </li>
                     </ul>
 

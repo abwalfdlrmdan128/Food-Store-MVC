@@ -12,7 +12,7 @@ namespace FoodProject.Controllers
     {
         Context context = new Context();
 
-        // ✅ Get All Orders 
+        //  Get All Orders 
         [HttpGet]
         public IActionResult Index(int page = 1)
         {
@@ -25,7 +25,7 @@ namespace FoodProject.Controllers
             return View(orders.ToPagedList(page, 8));
         }
 
-        // ✅ Order Details
+        //  Order Details
         [HttpGet]
         public IActionResult OrderDetails(int id)
         {
@@ -42,7 +42,7 @@ namespace FoodProject.Controllers
             return View(order);
         }
 
-        // ✅ Complete Order 
+        //  Complete Order 
         [HttpPost]
         public IActionResult OrderCompleted(int id)
         {
