@@ -1034,21 +1034,21 @@ button.submit.check_out{
 }
 /*-- //top-products --*/
 /*-- newsletter --*/
-.newsletter{
-	padding:3em 0;
-	background:#FA1818;
+.newsletter {
+	padding: 3em 0;
+	background: #008000;
 }
 .w3agile_newsletter_left{
 	float: left;
     width: 35%;
     text-align: right;
 }
-.w3agile_newsletter_left h3{
-	text-transform: capitalize;
-    font-size: 1.2em;
-    color: #fff;
-    margin: .5em 0 0;
-}
+.w3agile_newsletter_left h3 {
+		text-transform: capitalize;
+		font-size: 1.2em;
+		color: #000;
+		margin: .5em 0 0;
+	}
 .w3agile_newsletter_right{
 	float: left;
     width: 50%;
@@ -1074,11 +1074,11 @@ button.submit.check_out{
     width: 25.7%;
     text-transform: uppercase;
 }
-.w3agile_newsletter_right input[type="submit"]:hover{
-	background:#84C639;
-	border: 1px solid #84C639;
-	color:#fff;
-}
+.w3agile_newsletter_right input[type="submit"]:hover {
+		background: #84C639;
+		border: 1px solid #84C639;
+		color: #fff;
+	}
 /*-- //newsletter --*/
 /*-- footer --*/
 .footer{

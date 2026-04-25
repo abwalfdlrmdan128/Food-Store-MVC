@@ -9,6 +9,8 @@
     <title>FoodStore Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- YOUR ORIGINAL LINKS -->
     <link rel="icon" type="image/png" href="~/Login/images/icons/login.png" />
     <link rel="stylesheet" type="text/css" href="~/Login/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -22,73 +24,80 @@
     <link rel="stylesheet" type="text/css" href="~/Login/css/main.css">
 </head>
 
-<body>
+<body style="background: linear-gradient(135deg, #ff6a00, #ee0979); min-height:100vh; display:flex; justify-content:center; align-items:center;">
 
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100 p-t-85 p-b-20">
+    <div class="limiter" style="width:100%;">
+        <div class="container-login100" style="display:flex; justify-content:center; align-items:center;">
+            
+            <div class="wrap-login100 p-t-50 p-b-30"
+                 style="width:400px; background:#fff; border-radius:20px; padding:40px; box-shadow:0 10px 40px rgba(0,0,0,0.2);">
 
-                @* Form with validation *@
                 @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login100-form validate-form" }))
                 {
-                    <span class="login100-form-title p-b-70">FoodStore Login</span>
-                    <span class="login100-form-avatar">
-                        <img src="~/Login/images/login2.jpg" alt="AVATAR">
+                    <span style="display:block; font-size:28px; font-weight:bold; text-align:center; margin-bottom:20px;">
+                        FoodStore Login
                     </span>
 
+                    <span style="display:flex; justify-content:center; margin-bottom:20px;">
+                        <img src="~/Login/images/login2.jpg" style="width:80px; border-radius:50%;" />
+                    </span>
 
                     @* Username *@
-                    <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate="Enter your username">
-                        @Html.TextBoxFor(m => m.Username, new { @class = "input100", placeholder = "Username" })
+                    <div class="wrap-input100 validate-input m-t-20 m-b-20">
+                        @Html.TextBoxFor(m => m.Username,
+                            new {
+                                @class = "input100",
+                                placeholder = "Username",
+                                style = "border-radius:10px; padding:12px;"
+                            })
                         <span class="text-danger">@Html.ValidationMessageFor(m => m.Username)</span>
-                        <span class="focus-input100" data-placeholder="Username"></span>
                     </div>
-
 
                     @* Password *@
-                    <div class="wrap-input100 validate-input m-b-50" data-validate="Enter your password">
-                        @Html.PasswordFor(m => m.Password, new { @class = "input100", placeholder = "Password" })
+                    <div class="wrap-input100 validate-input m-b-20">
+                        @Html.PasswordFor(m => m.Password,
+                            new {
+                                @class = "input100",
+                                placeholder = "Password",
+                                style = "border-radius:10px; padding:12px;"
+                            })
                         <span class="text-danger">@Html.ValidationMessageFor(m => m.Password)</span>
-                        <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-
-                    @* General errors *@
+                    @* Errors *@
                     <div class="text-danger mb-3">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     </div>
 
-
-                    <div class="container-login100-form-btn">
-                        <button type="submit" class="login100-form-btn">Login</button>
+                    <div style="margin-top:10px;">
+                        <button type="submit"
+                                class="login100-form-btn"
+                                style="width:100%; padding:12px; border-radius:10px; background:linear-gradient(135deg, #ff6a00, #ee0979); border:none; color:white; font-weight:bold;">
+                            Login
+                        </button>
                     </div>
 
+                    <div style="text-align:center; margin-top:20px;">
+                        <a href="/Default/Index/" style="text-decoration:none; color:#ee0979;">
+                            Back to Homepage
+                        </a>
+                    </div>
 
-                    <ul class="login-more p-t-100">
-                        <li class="m-b-4">
-                            <a href="/Default/Index/" class="txt2">Back to Homepage</a>
-                        </li>
-                    </ul>
-
-
-                    <ul class="login-more p-t-10">
-                        <li class="m-b-8">
-                            <a href="/Register/Index/" class="txt2">
-                                <div class="row">
-                                    <div class="col-md-6"><p>Don't have an account?</p></div>
-                                    <div class="col-md-6">Register Now.</div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                    <div style="text-align:center; margin-top:10px;">
+                        <span>Don't have an account? </span>
+                        <a href="/Register/Index/" style="color:#ee0979; font-weight:500; text-decoration:none;">
+                            Register Now
+                        </a>
+                    </div>
                 }
+
             </div>
         </div>
     </div>
 
     <div id="dropDownSelect1"></div>
 
-
+    <!-- YOUR ORIGINAL SCRIPTS -->
     <script src="~/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="~/Login/vendor/animsition/js/animsition.min.js"></script>
     <script src="~/Login/vendor/bootstrap/js/popper.js"></script>
