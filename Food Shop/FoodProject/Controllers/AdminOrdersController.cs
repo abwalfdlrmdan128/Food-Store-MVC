@@ -1,5 +1,6 @@
 ﻿using FoodProject.Data;
 using FoodProject.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -7,7 +8,7 @@ using X.PagedList;
 
 namespace FoodProject.Controllers
 {
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminOrdersController : Controller
     {
         Context context = new Context();

@@ -48,6 +48,7 @@ namespace FoodProject.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Contact(Contact contact)
         {
             if (ModelState.IsValid)

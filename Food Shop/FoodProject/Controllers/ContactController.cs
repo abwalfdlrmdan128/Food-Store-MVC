@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FoodProject.Controllers
 {
-    
+    [Authorize]
     public class ContactController : Controller
     {
         Context context = new Context();

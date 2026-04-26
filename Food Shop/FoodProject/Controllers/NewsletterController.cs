@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FoodProject.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class NewsletterController : Controller
     {
         Context context = new Context();

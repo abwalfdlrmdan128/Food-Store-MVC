@@ -784,7 +784,6 @@ C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Order\UserOrders.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Register\Index.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Settings\Index.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Shared\Components\AdminOrderDetails\Default.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryGetList\Default.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Shared\Components\FoodGetList\Default.cshtml.g.cs

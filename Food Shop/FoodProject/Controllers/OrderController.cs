@@ -1,11 +1,13 @@
 ﻿using FoodProject.Data;
 using FoodProject.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace FoodProject.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         Context context = new Context();
@@ -14,7 +16,7 @@ namespace FoodProject.Controllers
         public IActionResult Index(int id)
         {
             if (!User.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Food");
+                return RedirectToAction("Index", "Login");
 
             var userName = User.Identity.Name;
             var userId = context.Users
@@ -71,6 +73,7 @@ namespace FoodProject.Controllers
         }
 
         //  Delete
+
         public IActionResult DeleteProduct(int id)
         {
             var item = context.Shoppings.Find(id);

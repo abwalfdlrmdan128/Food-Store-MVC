@@ -14,7 +14,7 @@ using X.PagedList;
 
 namespace FoodProject.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class FoodController : Controller
     {
         FoodRepository foodRepository = new FoodRepository();

@@ -9,8 +9,8 @@ using System.Linq;
 namespace FoodProject.Controllers
 {
 	 
-    //[Authorize(Roles = "Admin")]
-    //[AllowAnonymous]
+    [Authorize(Roles = "Admin")]
+    
     public class ChartController : Controller
     {
         // Static Google Chart

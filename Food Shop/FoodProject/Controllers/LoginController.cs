@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace FoodProject.Controllers
 {
     [AllowAnonymous]
-    //[Authorize(Roles = "Admin,Uye")]
+ 
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;
