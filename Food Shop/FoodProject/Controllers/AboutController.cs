@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace FoodProject.Controllers
 {
-
+    [AllowAnonymous]
     public class AboutController : Controller
     {
         Context context = new Context();

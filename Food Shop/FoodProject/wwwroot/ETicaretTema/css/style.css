@@ -300,14 +300,14 @@ ul.dropdown-menu.drp-mnu li a i {
 .w3ls_vegetables ul li a:hover{
 	color:#FA1818;
 }
-.w3l_banner_nav_right_banner1,.w3l_banner_nav_right_banner,.w3l_banner_nav_right_banner2{
-	min-height:500px;
+.w3l_banner_nav_right_banner1, .w3l_banner_nav_right_banner, .w3l_banner_nav_right_banner2, w3l_banner_nav_right_banner100, w3l_banner_nav_right_banner101{
+	min-height: 500px;
 	text-align: right;
-	padding:10em 17em 0 0;
+	padding: 10em 17em 0 0;
 	margin-bottom: 5em;
 }
 .w3l_banner_nav_right_banner{
-	background:url(../images/baharat.png) no-repeat 0px 0px;
+	background:url(../images/veg.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -315,7 +315,7 @@ ul.dropdown-menu.drp-mnu li a i {
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner1{
-	background:url(../images/sebze.jpg) no-repeat 0px 0px;
+	background:url(../images/veg2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -323,25 +323,41 @@ ul.dropdown-menu.drp-mnu li a i {
 	-ms-background-size:cover;
 }
 .w3l_banner_nav_right_banner2{
-	background:url(../images/icecek.jpg) no-repeat 0px 0px;
+	background:url(../images/sup2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	-ms-background-size:cover;
 }
-.w3l_banner_nav_right_banner h3,.w3l_banner_nav_right_banner1 h3,.w3l_banner_nav_right_banner2 h3{
+.w3l_banner_nav_right_banner100 {
+	background: url(../images/fruite2.png) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+}
+.w3l_banner_nav_right_banner101 {
+	background: url(../images/veg3.jpeg) no-repeat 0px 0px;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+}
+.w3l_banner_nav_right_banner h3, .w3l_banner_nav_right_banner1 h3, w3l_banner_nav_right_banner100 h3, w3l_banner_nav_right_banner101 h3, .w3l_banner_nav_right_banner2 h3 {
 	font-size: 2em;
-    color: #fff;
-    font-weight: 300;
-    text-transform: uppercase;
+	color: #fff;
+	font-weight: 300;
+	text-transform: uppercase;
 	margin-bottom: 1em;
 }
-.w3l_banner_nav_right_banner h3 span,.w3l_banner_nav_right_banner1 h3 span{
-	display:block;
-	font-weight:600;
-	line-height:2em;
-}
+	.w3l_banner_nav_right_banner h3 span, w3l_banner_nav_right_banner100 h3 span, w3l_banner_nav_right_banner101 h3 span, .w3l_banner_nav_right_banner1 h3 span {
+		display: block;
+		font-weight: 600;
+		line-height: 2em;
+	}
 .w3l_banner_nav_right_banner2 h3 i{
 /*-- agileits --*/
 	display:block;
