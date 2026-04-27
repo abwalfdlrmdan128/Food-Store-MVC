@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FoodProject.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class SettingsController : Controller
     {
         Context context = new Context();

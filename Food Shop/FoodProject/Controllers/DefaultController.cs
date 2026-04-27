@@ -111,7 +111,7 @@ namespace FoodProject.Controllers
                 var about = context.Abouts.Where(x => x.AboutTitle!.Contains(p)).ToList();
                 var food = context.Foods.Where(x => x.Name!.Contains(p)).ToList();
 
-                if (food.Count != 0) // Eğer ürün adı yazılmışsa o ürünün id'sini ViewBag ile taşıyalım
+                if (food.Count != 0) 
                 {
                     var foodID = context.Foods.Where(x => x.Name!.Contains(p)).FirstOrDefault();
                     ViewBag.fID = foodID.FoodID;

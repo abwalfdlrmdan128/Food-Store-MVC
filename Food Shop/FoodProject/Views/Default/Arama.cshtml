@@ -8,266 +8,158 @@
 <head>
     <title>FoodStore</title>
 
-    <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Grocery Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    
-    
+
     <script type="application/x-javascript">
-        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-               function hideURLbar(){ window.scrollTo(0,1); } 
+        addEventListener("load", function () { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar() { window.scrollTo(0, 1); }
     </script>
 
-
-
-    @*icon*@
     <link rel="icon" type="image/png" href="~/Login/images/icons/e-commerce.png" />
 
-    <!-- //for-mobile-apps -->
-    <link href="~/ETicaretTema/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="~/ETicaretTema/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    
-    <!-- font-awesome icons -->
-    <link href="~/ETicaretTema/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- //font-awesome icons -->
-    
-    
-    <!-- js -->
+    <link href="~/ETicaretTema/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/ETicaretTema/css/style.css" rel="stylesheet" />
+    <link href="~/ETicaretTema/css/font-awesome.css" rel="stylesheet" />
+
     <script src="~/ETicaretTema/js/jquery-1.11.1.min.js"></script>
-    
-    <!-- //js -->
-    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    
-    <!-- start-smoth-scrolling -->
-    <script type="text/javascript" src="~/ETicaretTema/js/move-top.js"></script>
-    <script type="text/javascript" src="~/ETicaretTema/js/easing.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
-            });
-        });
-    </script>
-   
-    
-    <!-- start-smoth-scrolling -->
+
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,700' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet'>
+
+    <script src="~/ETicaretTema/js/move-top.js"></script>
+    <script src="~/ETicaretTema/js/easing.js"></script>
+
 </head>
 
 <body>
-    <!-- header -->
+
+    <!-- Header -->
     <div class="agileits_header">
+
+        <!-- Search -->
         <div class="w3l_search">
-            <form action="@Url.Action("Arama","Default")" method="get">
-                <input type="text" name="p" value="Bir ürün arayın..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Bir ürün arayın...';}" required="">
+            <form action="@Url.Action("Search", "Default")" method="get">
+                <input type="text" name="p" value="Search a product..."
+                       onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Search a product...';}"
+                       required="">
                 <input type="submit" value=" ">
             </form>
         </div>
+
+        <!-- Cart -->
         <div class="product_list_header">
             <form action="#" method="post" class="last">
                 <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="Sepetiniz" class="button" />
+                    <input type="submit" value="Your Cart" class="button" />
                 </fieldset>
             </form>
         </div>
+
+        <!-- User -->
         <div class="w3l_header_right">
             <ul>
                 <li class="dropdown profile_details_drop">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i><span class="caret"></span>
+                    </a>
                     <div class="mega-dropdown-menu">
-                        <div class="w3ls_vegetables">
-                            <ul class="dropdown-menu drp-mnu">
-                                <li><a href="/Login/Index/">Giriş Yap</a></li>
-                                <li><a href="/Register/Index/">Kayıt Ol</a></li>
-                            </ul>
-                        </div>
+                        <ul class="dropdown-menu drp-mnu">
+                            <li><a href="/Login/Index/">Login</a></li>
+                            <li><a href="/Register/Index/">Register</a></li>
+                        </ul>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="w3l_header_right1">
-            <h2><a href="/Default/Contact/">Bize Ulaşın</a></h2>
-        </div>
-        <div class="clearfix"> </div>
-    </div>
-    <!-- script-for sticky-nav -->
-    <script>
-        $(document).ready(function () {
-            var navoffeset = $(".agileits_header").offset().top;
-            $(window).scroll(function () {
-                var scrollpos = $(window).scrollTop();
-                if (scrollpos >= navoffeset) {
-                    $(".agileits_header").addClass("fixed");
-                } else {
-                    $(".agileits_header").removeClass("fixed");
-                }
-            });
 
-        });
-    </script>
-    <!-- //script-for sticky-nav -->
+        <!-- Contact -->
+        <div class="w3l_header_right1">
+            <h2><a href="/Default/Contact/">Contact Us</a></h2>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Logo -->
     <div class="logo_products">
         <div class="container">
+
             <div class="w3ls_logo_products_left">
                 <h1><a href="/Default/Index/"><span>Food</span> Store</a></h1>
             </div>
+
+            <!-- Menu -->
             <div class="w3ls_logo_products_left1">
                 <ul class="special_items">
-                    <li><a href="/Default/Index/">Ana Sayfa</a><i>/</i></li>
-                    <li><a href="/Default/About/">Hakkımızda</a><i>/</i></li>
-                    <li><a href="/Default/Products/">Ürünler</a><i></i></li>
+                    <li><a href="/Default/Index/">Home</a><i>/</i></li>
+                    <li><a href="/Default/About/">About</a><i>/</i></li>
+                    <li><a href="/Default/Products/">Products</a></li>
                 </ul>
             </div>
+
+            <!-- Phone + Email -->
             <div class="w3ls_logo_products_left1">
                 <ul class="phone_email">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>(+0110) 6039 247</li>
-                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:foodstore@gmail.com">foodstore@gmail.com</a></li>
+                    <li><i class="fa fa-phone"></i>+(2011)06039247</li>
+                    <li>
+                        <i class="fa fa-envelope-o"></i>
+                        <a href="mailto:abwalfdlrmdan128@gmail.com">
+                            abwalfdlrmdan128@gmail.com
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="clearfix"> </div>
+
+            <div class="clearfix"></div>
         </div>
     </div>
-    <!-- //header -->
-    <!-- banner -->
-    <!-- banner -->
+
+    <!-- Sidebar Categories -->
     <div class="banner">
         <div class="w3l_banner_nav_left">
             <nav class="navbar nav_bottom">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header nav_2">
-                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 @await Component.InvokeAsync("CategoryGetList")
-                <!-- /.navbar-collapse -->
             </nav>
         </div>
-        @*@await Html.PartialAsync("Slider")*@
-        @*<div class="clearfix"></div>*@
     </div>
-    <!-- top-brands -->
-    <div>
-        <div class="container" style="background-color:#fff; margin-bottom:50px">
-            <hr class="m-0" style="margin-top:0px;">
-            <div class="container col-md-8 py-5 mt-3" style="margin-left: 60px; margin-top:30px;">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h2 class="font-weight-normal text-6 mb-0">Arama sonuçları listeleniyor...</h2>
-                    </div>
-                </div>
-                <hr class="my-4" style="margin-left:-15px">
-                <div class="row">
-                    <div class="col-md-12 " style="margin-bottom:80px; margin-left: 40px;">
-                        @foreach (var item in Model.Abouts)
-                        {
-                        <ul class="simple-post-list m-0">
-                            <li>
-                                <div class="post-info">
-                                    <a href="/Default/About/@item.AboutID ">@Html.Raw(@item.AboutTitle)</a>
-                                    <div class="post-meta">
-                                        @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="col pt-2 mt-1">
-                            <hr class="my-4" style="margin-left:-15px">
-                        </div>
-                        }
-                        @foreach (var item in Model.Foods)
-                        {
-                        <ul class="simple-post-list m-0">
-                            <li>
-                                <div class="post-info">
-                                    <a href="/Default/ProductDetails/@ViewBag.fID">@Html.Raw(@item.Name)</a>
-                                    <div class="post-meta">
-                                        @*<span class="text-dark text-uppercase font-weight-semibold">@item.SurumKilavuz_BelgeTarihi.ToShortDateString()</span> | @Html.Raw(@item.SurumKilavuz_Aciklama)*@
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        }
-                    </div>
-                </div>
+
+    <!-- Search Results -->
+    <div class="container" style="background-color:#fff; margin-bottom:50px">
+
+        <h2>Search Results</h2>
+        <hr>
+
+        <!-- About Results -->
+        @foreach (var item in Model.Abouts)
+        {
+            <div>
+                <a href="/Default/About/@item.AboutID">
+                    @Html.Raw(item.AboutTitle)
+                </a>
+                <hr>
             </div>
-        </div>
+        }
+
+        <!-- Food Results -->
+        @foreach (var item in Model.Foods)
+        {
+            <div>
+                <a href="/Default/ProductDetails/@item.FoodID">
+                    @Html.Raw(item.Name)
+                </a>
+                <hr>
+            </div>
+        }
+
     </div>
-    <!-- //top-brands -->
-    <!-- newsletter -->
-    @*@await Html.PartialAsync("Subscribe")*@
-    @*@await Html.PartialAsync("~/Views/Newsletter/Subscribe.cshtml")*@
 
-    <!-- //newsletter -->
-    <!-- footer -->
+    <!-- Footer -->
     @await Html.PartialAsync("Footer")
-    <!-- //footer -->
-    <!-- Bootstrap Core JavaScript -->
+
+    <!-- Scripts -->
     <script src="~/ETicaretTema/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".dropdown").hover(
-                function () {
-                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
-                    $(this).toggleClass('open');
-                },
-                function () {
-                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
-                    $(this).toggleClass('open');
-                }
-            );
-        });
-    </script>
-    <!-- here stars scrolling icon -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            /*
-                var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear'
-                };
-            */
-
-            //$().UItoTop({ easingType: 'easeOutQuart' });
-
-        });
-    </script>
-    <!-- //here ends scrolling icon -->
-    <script src="~/ETicaretTema/js/minicart.js"></script>
-    <script>
-        paypal.minicart.render();
-
-        paypal.minicart.cart.on('checkout', function (evt) {
-            var items = this.items(),
-                len = items.length,
-                total = 0,
-                i;
-
-            // Count the number of each item in the cart
-            for (i = 0; i < len; i++) {
-                total += items[i].get('quantity');
-            }
-
-            if (total < 3) {
-                alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
-                evt.preventDefault();
-            }
-        });
-    </script>
 
 </body>
 </html>
-
-
-

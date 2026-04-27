@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FoodProject.Controllers
 {
-
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
