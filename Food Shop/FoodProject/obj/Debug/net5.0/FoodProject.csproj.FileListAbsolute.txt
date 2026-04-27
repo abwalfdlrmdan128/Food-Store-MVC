@@ -741,12 +741,7 @@ C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\FoodProject.TagHelpers.output.cache
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\FoodProject.RazorCoreGenerate.cache
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\Error.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\Privacy.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\Shared\_Layout.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\_ViewImports.cshtml.g.cs
-C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Pages\_ViewStart.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\About\AboutAdd.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\About\AboutDetails.cshtml.g.cs
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\About\AboutUpdate.cshtml.g.cs
@@ -808,3 +803,4 @@ C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\FoodProject.pdb
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\FoodProject.genruntimeconfig.cache
 C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\ref\FoodProject.dll
+C:\Users\UG\Documents\GitHub\Food Store MVC\Food Shop\FoodProject\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
