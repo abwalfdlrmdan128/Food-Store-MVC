@@ -1,67 +1,91 @@
 ﻿<div class="w3l_banner_nav_right">
+
+    <!-- jQuery FIRST -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- FlexSlider CSS -->
+    <link rel="stylesheet" href="~/ETicaretTema/css/flexslider.css" type="text/css" />
+
+    <!-- FlexSlider JS -->
+    <script src="~/ETicaretTema/js/jquery.flexslider.js"></script>
+
     <section class="slider">
         <div class="flexslider">
             <ul class="slides">
+
                 <li>
                     <div class="w3l_banner_nav_right_banner">
                         <h3>The most delicious <span>foods</span> and spices.</h3>
                         <div class="more">
-                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick" data-text="">Buy Now</a>
+                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick">
+                                Buy Now
+                            </a>
                         </div>
                     </div>
                 </li>
+
                 <li>
-                    <div class="w3l_banner_nav_right_banner1">
+                    <div class="w3l_banner_nav_right_banner1"
+                         style="background: url(@Url.Content("~/ETicaretTema/images/fruite2.png")) no-repeat center; background-size: cover;">
                         <h3>Completely organic <span>natural</span> products.</h3>
                         <div class="more">
-                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick" data-text="">Buy Now</a>
+                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick">
+                                Buy Now
+                            </a>
                         </div>
                     </div>
                 </li>
+
+                <li>
+                    <div class="w3l_banner_nav_right_banner1"
+                         style="background: url(@Url.Content("~/ETicaretTema/images/veg3.jpeg")) no-repeat center; background-size: cover;">
+                        <h3>50% discount on natural drinks.</h3>
+                        <div class="more">
+                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="w3l_banner_nav_right_banner1">
+                        <h3>Fresh and healthy everyday.</h3>
+                        <div class="more">
+                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
                 <li>
                     <div class="w3l_banner_nav_right_banner2">
-                        <h3>50% discount on natural drinks.</h3>
+                        <h3>Best quality products for you.</h3>
                         <div class="more">
-                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick" data-text="">Buy Now</a>
+                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick">
+                                Buy Now
+                            </a>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="w3l_banner_nav_right_banner100">
-                        <h3>50% discount on natural drinks.</h3>
-                        <div class="more">
-                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick" data-text="">Buy Now</a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="w3l_banner_nav_right_banner101">
-                        <h3>50% discount on natural drinks.</h3>
-                        <div class="more">
-                            <a href="/Default/Products/" class="button--saqui button--round-l button--text-thick" data-text="">Buy Now</a>
-                        </div>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </section>
 
-
-    <!-- flexSlider -->
-    <link rel="stylesheet" href="~/ETicaretTema/css/flexslider.css" type="text/css" media="screen" property="" />
-    <script defer src="~/ETicaretTema/js/jquery.flexslider.js"></script>
-    <script type="text/javascript">
-        $(window).load(function () {
+    <!-- Init FlexSlider -->
+    <script>
+        $(window).on('load', function () {
             $('.flexslider').flexslider({
                 animation: "slide",
-                  slideshowSpeed: 3000, 
-                  animationSpeed: 600,
-                start: function (slider) {
+                slideshowSpeed: 3000,
+                animationSpeed: 600,
+                start: function () {
                     $('body').removeClass('loading');
                 }
             });
         });
     </script>
-    <!-- //flexSlider -->
 
 </div>
