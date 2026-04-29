@@ -1,98 +1,163 @@
-﻿@model FoodProject.Data.Models.Payment
-@{
-    ViewData["Title"] = "PaymentAdd";
+﻿@{
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
-<div class="container" style="margin-bottom:20px; margin:auto; padding-right:150px;border:solid 2px ">
-    <div style="position:center">
-        <form action="PaymentAdd" controller="Order" method="post" class="creditly-card-form agileinfo_form">
-            <section class="creditly-wrapper wthree, w3_agileits_wrapper">
-                <div class="information-wrapper">
-                    <div class="first-row form-group">
-                        <div class="w3_agileits_card_number_grid_right">
-                            @Html.ValidationMessageFor(x => x.MobileNumber, "", new { @style = "color:red" })
-                            <div class="controls">
-                                <label class="control-label">Phone Number: </label>
-                                <input class="form-control" type="tel" name="MobileNumber" placeholder="Phone Number *">
-                            </div>
-                        </div>
+<div class="container mt-5">
 
-                        <div class="w3_agileits_card_number_grids">
-                            <div class="w3_agileits_card_number_grid_left">
-                                @Html.ValidationMessageFor(x => x.Email, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">Email:</label>
-                                    <input class="form-control" type="email" name="Email" placeholder="Email *">
-                                </div>
-                            </div>
+    <div class="checkout-card">
 
-                            <div class="w3_agileits_card_number_grid_right">
-                                @Html.ValidationMessageFor(x => x.City, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">City: </label>
-                                    <input class="form-control" type="text" name="City" placeholder="City *">
-                                </div>
-                            </div>
+        <h3 class="text-center mb-4">Checkout</h3>
 
-                            <div class="w3_agileits_card_number_grid_right">
-                                @Html.ValidationMessageFor(x => x.Address, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">Address: </label>
-                                    <input class="form-control" type="text" name="Address" placeholder="Address *">
-                                </div>
-                            </div>
+        <!-- Shipping -->
+        <div class="section-box">
 
-                            @Html.ValidationMessageFor(x => x.NameSurname, "", new { @style = "color:red" })
-                            <div class="controls">
-                                <label class="control-label">Full Name: </label>
-                                <input class="billing-address-name form-control" type="text" name="NameSurname" placeholder="Full Name *">
-                            </div>
+            <h5>Shipping Details</h5>
 
-                            <div class="w3_agileits_card_number_grid_right">
-                                @Html.ValidationMessageFor(x => x.CardNumber, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">Card Number: </label>
-                                    <input class="form-control" type="text" name="CardNumber" placeholder="Card Number *">
-                                </div>
-                            </div>
+            <input id="mobile" class="form-control mb-2" placeholder=" Mobile Number" />
+            <small class="text-danger" id="mobileError"></small>
 
-                            <div class="w3_agileits_card_number_grid_right">
-                                @Html.ValidationMessageFor(x => x.CardMonth_Year, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">Card Expiry (Month/Year): </label>
-                                    <input class="form-control" type="text" name="CardMonth_Year" placeholder="MM/YY *">
-                                </div>
-                            </div>
+            <input id="city" class="form-control mb-2" placeholder=" City" />
+            <small class="text-danger" id="cityError"></small>
 
-                            <div class="w3_agileits_card_number_grid_right">
-                                @Html.ValidationMessageFor(x => x.CardCVC, "", new { @style = "color:red" })
-                                <div class="controls">
-                                    <label class="control-label">CVV: </label>
-                                    <input class="form-control" type="text" name="CardCVC" placeholder="CVV *">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <textarea id="address" class="form-control mb-2" placeholder=" Address"></textarea>
+            <small class="text-danger" id="addressError"></small>
 
-                    <button class="btn btn-danger" id="btnOk">Complete Order</button>
+        </div>
 
-                    <br /><br /><br />
-                </div>
-            </section>
-        </form>
+        <!-- Payment -->
+        <div class="section-box text-center">
+
+            <h5>Payment Method</h5>
+
+            <p class="text-muted">Secure payment powered by PayPal</p>
+
+            <div id="paypal-button-container"></div>
+
+        </div>
+
     </div>
+
 </div>
 
+<!-- PayPal -->
+<script src="https://www.paypal.com/sdk/js?client-id=Ab2LP6jTdu-uderNfdUl39pz3sfY-x9XIP_pGGQdcRgV941LNBAtmJv_z93zYmsrGRyoLsWxK4p5vXkw"></script>
+
 <script>
-    try {
-        const btn = document.querySelector('#btnOk');
-        btn.addEventListener('click', () => {
-            alert('Thank you for your order. Your order will be shipped as soon as possible.');
-        })
+
+    function validateForm() {
+
+        let isValid = true;
+
+        const mobile = document.getElementById("mobile").value.trim();
+        const city = document.getElementById("city").value.trim();
+        const address = document.getElementById("address").value.trim();
+
+        // reset errors
+        document.getElementById("mobileError").innerText = "";
+        document.getElementById("cityError").innerText = "";
+        document.getElementById("addressError").innerText = "";
+
+        if (mobile === "") {
+            document.getElementById("mobileError").innerText = "Mobile is required";
+            isValid = false;
+        }
+
+        if (city === "") {
+            document.getElementById("cityError").innerText = "City is required";
+            isValid = false;
+        }
+
+        if (address === "") {
+            document.getElementById("addressError").innerText = "Address is required";
+            isValid = false;
+        }
+
+        return isValid;
     }
-    catch(err)
-    {
-        alert("Error. Order could not be placed.");
+
+    paypal.Buttons({
+
+        onInit: function (data, actions) {
+
+            actions.disable(); // البداية disabled
+
+            // نراقب inputs
+            document.querySelectorAll("input, textarea").forEach(el => {
+                el.addEventListener("keyup", function () {
+                    if (validateForm()) {
+                        actions.enable();
+                    } else {
+                        actions.disable();
+                    }
+                });
+            });
+        },
+
+        createOrder: function () {
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const data = {
+                mobile: document.getElementById("mobile").value,
+                city: document.getElementById("city").value,
+                address: document.getElementById("address").value
+            };
+
+            return fetch('/Order/CreatePaypalOrder', {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(res => res.id);
+        },
+
+        onApprove: function (data) {
+
+            return fetch(`/Order/CapturePaypalOrder?orderId=${data.orderID}`, {
+                method: 'post'
+            })
+            .then(() => {
+                window.location.href = "/Order/UserOrders";
+            });
+
+        }
+
+    }).render('#paypal-button-container');
+
+</script>
+
+<style>
+
+    body {
+        background: #f2f6fc;
     }
-</script> 
+
+    .checkout-card {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .section-box {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #eee;
+    }
+
+    input, textarea {
+        border-radius: 10px !important;
+        padding: 10px;
+    }
+
+    .text-danger {
+        font-size: 12px;
+    }
+</style>

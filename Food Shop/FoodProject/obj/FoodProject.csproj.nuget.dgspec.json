@@ -90,6 +90,10 @@
               "target": "Package",
               "version": "[5.0.2, )"
             },
+            "Razorpay": {
+              "target": "Package",
+              "version": "[3.3.2, )"
+            },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[7.2.0, )"

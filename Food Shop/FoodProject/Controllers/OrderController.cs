@@ -1,9 +1,12 @@
 ﻿using FoodProject.Data;
 using FoodProject.Data.Models;
+using FoodProject.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FoodProject.Controllers
 {
@@ -11,7 +14,11 @@ namespace FoodProject.Controllers
     public class OrderController : Controller
     {
         Context context = new Context();
-
+        private readonly PayPalClient _payPalClient;
+        public OrderController(PayPalClient payPalClient)
+        {
+            _payPalClient = payPalClient;
+        }
         //  Add to Cart
         public IActionResult Index(int id)
         {
@@ -109,82 +116,8 @@ namespace FoodProject.Controllers
             return RedirectToAction("BasketDetails");
         }
 
-        //  Payment Page
-        [HttpGet]
-        public IActionResult PaymentAdd()
-        {
-            return View();
-        }
-
-        //  Checkout ()
-        [HttpPost]
-        public IActionResult PaymentAdd(Payment payment)
-        {
-            if (!ModelState.IsValid)
-                return View(payment);
-
-            var userName = User.Identity.Name;
-            var userId = context.Users
-                .Where(x => x.UserName == userName)
-                .Select(x => x.Id)
-                .FirstOrDefault();
-
-            var cart = context.Shoppings
-                .Where(x => x.AppUserID == userId)
-                .Include(x => x.Food)
-                .ToList();
-
-            if (!cart.Any())
-                return BadRequest("Cart is empty");
-
-            //  Calculate total
-            double total = cart.Sum(x => x.ShoppingQuantity * x.Food.Price);
-
-            //  Save Payment
-            payment.AppUserID = userId;
-            payment.ShoppingTotal = total;
-
-            context.Payments.Add(payment);
-            context.SaveChanges();
-
-            //  Create Order
-            var order = new Order
-            {
-                AppUserID = userId,
-                PaymentId = payment.PaymentId,
-                TotalPrice = total,
-                Status = "Completed"
-            };
-
-            context.Orders.Add(order);
-            context.SaveChanges();
-
-            //  Create OrderDetails
-            var orderDetails = cart.Select(item => new OrderDetail
-            {
-                OrderID = order.OrderID,
-                FoodID = item.FoodID,
-                FoodName = item.Food.Name,
-                FoodPrice = item.Food.Price,
-                FoodImage = item.Food.ImageURL,
-                FoodQuantity = item.ShoppingQuantity
-            }).ToList();
-
-            context.OrderDetails.AddRange(orderDetails);
-
-            //  Update Stock
-            foreach (var item in cart)
-            {
-                item.Food.Stock -= item.ShoppingQuantity;
-            }
-
-            //  Clear cart
-            context.Shoppings.RemoveRange(cart);
-
-            context.SaveChanges();
-
-            return RedirectToAction("UserOrders");
-        }
+        
+       
 
         // User Orders
         public IActionResult UserOrders()
@@ -201,6 +134,110 @@ namespace FoodProject.Controllers
                 .ToList();
 
             return View(orders);
+        }
+
+
+        [HttpGet]
+        public IActionResult PaymentAdd()
+        {
+            ViewBag.ClientId = _payPalClient.ClientId;
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreatePaypalOrder([FromBody] ShippingDto dto)
+        {
+            var userId = context.Users
+                .Where(x => x.UserName == User.Identity.Name)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            var cart = context.Shoppings
+                .Where(x => x.AppUserID == userId)
+                .Include(x => x.Food)
+                .ToList();
+
+            if (!cart.Any())
+                return BadRequest("Cart empty");
+
+            double total = cart.Sum(x => x.ShoppingQuantity * x.Food.Price);
+
+            TempData["Mobile"] = dto.Mobile;
+            TempData["City"] = dto.City;
+            TempData["Address"] = dto.Address;
+
+            var order = await _payPalClient.CreateOrder(
+                total.ToString("F2"),
+                "USD",
+                Guid.NewGuid().ToString()
+            );
+
+            return Ok(order);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CapturePaypalOrder(string orderId)
+        {
+            var result = await _payPalClient.CaptureOrder(orderId);
+
+            var userId = context.Users
+                .Where(x => x.UserName == User.Identity.Name)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            var cart = context.Shoppings
+                .Where(x => x.AppUserID == userId)
+                .Include(x => x.Food)
+                .ToList();
+
+            double total = cart.Sum(x => x.ShoppingQuantity * x.Food.Price);
+
+            // Payment
+            var payment = new Payment
+            {
+                AppUserID = userId,
+                ShoppingTotal = total,
+                MobileNumber = TempData["Mobile"]?.ToString(),
+                City = TempData["City"]?.ToString(),
+                Address = TempData["Address"]?.ToString(),
+                Email = User.Identity.Name
+            };
+
+            context.Payments.Add(payment);
+            context.SaveChanges();
+
+            // Order
+            var order = new Order
+            {
+                AppUserID = userId,
+                PaymentId = payment.PaymentId,
+                TotalPrice = total,
+                Status = "Pending"
+            };
+
+            context.Orders.Add(order);
+            context.SaveChanges();
+
+            // Details
+            context.OrderDetails.AddRange(
+                cart.Select(x => new OrderDetail
+                {
+                    OrderID = order.OrderID,
+                    FoodID = x.FoodID,
+                    FoodName = x.Food.Name,
+                    FoodPrice = x.Food.Price,
+                    FoodQuantity = x.ShoppingQuantity
+                })
+            );
+
+            // stock
+            foreach (var item in cart)
+                item.Food.Stock -= item.ShoppingQuantity;
+
+            context.Shoppings.RemoveRange(cart);
+            context.SaveChanges();
+
+            return Ok(result);
         }
     }
 }

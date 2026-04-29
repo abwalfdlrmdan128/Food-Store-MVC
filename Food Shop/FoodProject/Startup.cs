@@ -1,4 +1,5 @@
 using FoodProject.Data.Models;
+using FoodProject.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -57,6 +58,11 @@ namespace FoodProject
                 opts.LoginPath = "/Login/Index/";
                 opts.SlidingExpiration = true;
             });
+            services.AddSingleton(x => new PayPalClient(
+                Configuration["PayPalOptions:ClientId"],
+                Configuration["PayPalOptions:ClientSecret"],
+                Configuration["PayPalOptions:Mode"]
+            ));
 
             //services.AddMvc(config=>
             //{
