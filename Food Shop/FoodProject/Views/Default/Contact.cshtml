@@ -5,70 +5,121 @@
     Layout = "~/Views/Shared/_SiteLayout.cshtml";
 }
 
-<div class="mail" style="margin-bottom:75px;border:solid 2px">
-   @if (TempData["success"] != null)
-   {
-    <script>
-        swal({
-            title: "Great!",
-            text: "@TempData["success"]",
-            icon: "success",
-            button: "OK"
-        });
-    </script>
-   }
+<div class="mail" style="max-width:1200px; margin:50px auto 75px auto; padding:40px; background:#ffffff; border-radius:20px; box-shadow:0 8px 30px rgba(0,0,0,0.12); border:1px solid #f1f1f1;">
+
+    @if (TempData["success"] != null)
+    {
+        <script>
+            swal({
+                title: "Great!",
+                text: "@TempData["success"]",
+                icon: "success",
+                button: "OK"
+            });
+        </script>
+    }
+
     @if (TempData["error"] != null)
     {
-    <script>
-        swal({
-            title: "Sorry!",
-            text: "@TempData["error"]",
-            icon: "error",
-            button: "OK"
-        });
-    </script>
+        <script>
+            swal({
+                title: "Sorry!",
+                text: "@TempData["error"]",
+                icon: "error",
+                button: "OK"
+            });
+        </script>
     }
-    <h3>Contact Us</h3>
-    <div class="agileinfo_mail_grids">
+
+    <h3 style="text-align:center; font-size:36px; font-weight:bold; margin-bottom:40px; color:#333;">
+        Contact Us
+    </h3>
+
+    <div class="agileinfo_mail_grids" style="padding:20px 10px;">
+
         <div class="col-md-4 agileinfo_mail_grid_left">
             <ul>
                 <li><i class="fa fa-home" aria-hidden="true"></i></li>
                 <li>
-                    Address<span style="text-transform: lowercase;">
+                    Address
+                    <span style="text-transform: lowercase;">
                         Aswan / Naser – Elnoba
                     </span>
                 </li>
             </ul>
+
             <ul>
                 <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
                 <li>
-                    E-Mail<span>
-                        <a href="mailto:abwalfdlrmdan128@gmail.com" style="text-transform: lowercase;">abwalfdlrmdan128@gmail.com</a>
+                    E-Mail
+                    <span>
+                        <a href="mailto:abwalfdlrmdan128@gmail.com" style="text-transform: lowercase;">
+                            abwalfdlrmdan128@gmail.com
+                        </a>
                     </span>
                 </li>
             </ul>
+
             <ul>
                 <li><i class="fa fa-phone" aria-hidden="true"></i></li>
-                <li>Call Us<span style="text-transform: lowercase;">(+0110) 603 9247</span></li>
+                <li>
+                    Call Us
+                    <span style="text-transform: lowercase;">
+                        (+0110) 603 9247
+                    </span>
+                </li>
             </ul>
         </div>
+
         <div class="col-md-8 agileinfo_mail_grid_right">
             <form action="Contact" controller="Default" method="post">
+
                 <div class="col-md-6 wthree_contact_left_grid">
-                    <input type="text" name="ContactName" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}" required="">
-                    <input type="email" name="ContactEmail" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}" required="">
+                    <input type="text"
+                           name="ContactName"
+                           value="Your Name"
+                           onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Your Name';}"
+                           required="">
+
+                    <input type="email"
+                           name="ContactEmail"
+                           value="E-Mail"
+                           onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'E-Mail';}"
+                           required="">
                 </div>
+
                 <div class="col-md-6 wthree_contact_left_grid">
-                    <input type="text" name="ContactSurname" value="Your Surname" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Surname';}" required="">
-                    <input type="text" name="ContactSubject" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
+                    <input type="text"
+                           name="ContactSurname"
+                           value="Your Surname"
+                           onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Your Surname';}"
+                           required="">
+
+                    <input type="text"
+                           name="ContactSubject"
+                           value="Subject"
+                           onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'Subject';}"
+                           required="">
                 </div>
-                <div class="clearfix"> </div>
-                <textarea name="ContactMessage" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message...';}" required="">Your Message...</textarea>
+
+                <div class="clearfix"></div>
+
+                <textarea name="ContactMessage"
+                          onfocus="this.value = '';"
+                          onblur="if (this.value == '') {this.value = 'Your Message...';}"
+                          required="">Your Message...</textarea>
+
                 <input type="submit" value="Send" class="contact">
                 <input type="reset" value="Cancel">
+
             </form>
         </div>
-        <div class="clearfix"> </div>
+
+        <div class="clearfix"></div>
     </div>
 </div>
 

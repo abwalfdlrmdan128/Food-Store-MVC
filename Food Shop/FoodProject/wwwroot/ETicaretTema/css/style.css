@@ -107,14 +107,14 @@ input[type="submit"],#PPMiniCart .minicart-submit,.w3ls_vegetables ul li a,input
 		}
 
 		/* Submit button - changed red (#FA1818) to green (#84C639) */
-		.w3l_search input[type="submit"] {
-			outline: none;
-			padding: 9px 0 9px;
-			width: 15%;
-			position: relative;
-			background: url(../images/img-sp.png) no-repeat 25px 5px green; /* changed color to green */
-			transition: background-color 0.3s ease; /* smooth hover transition */
-		}
+	.w3l_search input[type="submit"] {
+		outline: none;
+		padding: 11px 0 11px;
+		width: 15%;
+		position: relative;
+		background: url(../images/img-sp.png) no-repeat 25px 5px limegreen; /* changed color to green */
+		transition: background-color 0.3s ease; /* smooth hover transition */
+	}
 
 			/* Hover effect - already light green, kept as is */
 			.w3l_search input[type="submit"]:hover {
@@ -169,8 +169,7 @@ ul.dropdown-menu.drp-mnu li a i {
 		text-decoration: none;
 		text-transform: uppercase;
 		display: block;
-/*		background: url(../images/download.jpg);*/
-		background: url(../images/open.png) no-repeat 54px 6px;
+		/*background: url(../images/download.jpg);*/
 		line-height: 1;
 		height: 97px;
 	}

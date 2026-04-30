@@ -72,7 +72,7 @@
         <div class="w3l_search ">
             <form action="@Url.Action("Arama", "Default")" method="get">
                 <input type="text" name="p" value="Search for a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for a product...';}" required="">
-                <input type="submit" value=" " class="btn btn-success">
+                <input type="submit" value=" " class="btn">
             </form>
         </div>
 
@@ -149,7 +149,7 @@
         <div class="container">
 
             <div class="w3ls_logo_products_left">
-                <h1><a href="/Default/Index/"><span>Food</span> Store</a></h1>
+                <h1><a href="/Default/Index/" style="background: url('@Url.Content("~/ETicaretTema/images/img-sp.png")')  no-repeat 54px 6px;color:limegreen;"><span>Food</span> Store</a></h1>
             </div>
 
             <div class="w3ls_logo_products_left1">
