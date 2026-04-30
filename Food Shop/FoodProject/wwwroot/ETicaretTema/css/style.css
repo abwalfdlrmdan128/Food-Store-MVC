@@ -163,14 +163,14 @@ ul.dropdown-menu.drp-mnu li a i {
 	float:left;
 	margin-right: 7em;
 }
-	.w3ls_logo_products_left h1 a {
+.w3ls_logo_products_left h1 a {
 		font-size: 1.5em;
 		color: #212121;
 		text-decoration: none;
 		text-transform: uppercase;
 		display: block;
 /*		background: url(../images/download.jpg);*/
-		background: url(../images/download.jpg) no-repeat 54px 6px;
+		background: url(../images/open.png) no-repeat 54px 6px;
 		line-height: 1;
 		height: 97px;
 	}
@@ -4893,4 +4893,22 @@ input.checkbox:checked:after {
 		background: url(../images/cart.png) no-repeat 105px 5px;
 		font-size: 13px;
 	}
+}
+
+/* Remove border / outline from links, buttons, inputs */
+a,
+a:focus,
+a:active,
+a:hover,
+button,
+button:focus,
+button:active,
+input,
+input:focus,
+textarea,
+textarea:focus {
+	outline: none !important;
+	box-shadow: none !important;
+	border-color: inherit !important;
+	text-decoration: none;
 }
