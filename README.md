@@ -1,3 +1,3 @@
 # Foode Store
 - **HomePage**  
-![HomePage](./StoreScreens/HomePage.png)
+![HomePage](/Food Shop/StoreScreens/HomePage.png)
