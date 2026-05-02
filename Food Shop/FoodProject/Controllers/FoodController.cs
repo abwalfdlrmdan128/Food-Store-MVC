@@ -69,33 +69,47 @@ namespace FoodProject.Controllers
             List<SelectListItem> values = (from y in context.Categories.Where(x => x.Status == true).ToList()select new SelectListItem{Text = y.CategoryName,Value = y.CategoryID.ToString()}).ToList();
             ViewBag.categories = values;
             var x = foodRepository.TGet(id);
+            ViewBag.ImageURL = x.ImageURL;
             return View(x);
         }
 
         [HttpPost]
-        public IActionResult FoodUpdate(FoodImage p)
+        public IActionResult FoodUpdate(FoodImage p,string OldImageURL)
         {
             Food food = new Food();
             if (ModelState.IsValid)
             {
                 if (p.ImageURL != null)
                 {
-                   
+
                     var extension = Path.GetExtension(p.ImageURL.FileName);
                     var newImageName = Guid.NewGuid() + extension;
                     var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Resimler/", newImageName);
                     var stream = new FileStream(location, FileMode.Create);
                     p.ImageURL.CopyTo(stream);
-                    p.ImageName= newImageName;
-                }
+                    p.ImageName = newImageName;
 
-                food.FoodID = p.FoodID;
-                food.Name = p.Name;
-                food.Stock = p.Stock;
-                food.Price = p.Price;
-                food.Description = p.Description;
-                food.ImageURL = p.ImageName;
-                food.CategoryID = p.CategoryID;
+
+                    food.FoodID = p.FoodID;
+                    food.Name = p.Name;
+                    food.Stock = p.Stock;
+                    food.Price = p.Price;
+                    food.Description = p.Description;
+                    food.ImageURL = p.ImageName;
+                    food.CategoryID = p.CategoryID;
+                    
+                }
+                else
+                {
+                    food.FoodID = p.FoodID;
+                    food.Name = p.Name;
+                    food.Stock = p.Stock;
+                    food.Price = p.Price;
+                    food.Description = p.Description;
+                    food.ImageURL = OldImageURL;
+                    food.CategoryID = p.CategoryID;
+                    
+                }
                 foodRepository.TUpdate(food);
             }
             return RedirectToAction("Index", "Food");

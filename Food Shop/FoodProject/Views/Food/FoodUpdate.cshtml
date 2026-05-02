@@ -38,8 +38,9 @@
         <br />
 
         <label style="font-weight:bold;">Image</label>
-        <input type="file" name="ImageURL"
+        <input type="file" name="ImageURL" 
                style="display:block; width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;" />
+        <input type="hidden" name="OldImageURL" value="@ViewBag.ImageURL" />
         <br />
 
         <label style="font-weight:bold;">Category</label>
