@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\order\\basketdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\order\\basketdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\shared\\_sitelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\shared\\_sitelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\controllers\\foodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\default\\footer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\shared\\_sitelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\shared\\_sitelayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -69,10 +77,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\default\\slider.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\default\\slider.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\order\\basketdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\views\\order\\basketdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\data\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -117,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\foodproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\foodproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|solutionrelative:foodproject\\controllers\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{77EF6E28-B54D-4776-B904-2116CDFF571C}|FoodProject\\FoodProject.csproj|c:\\users\\ug\\documents\\github\\food-store-mvc\\food shop\\foodproject\\views\\adminorders\\orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -438,40 +438,99 @@
       "DocumentGroups": [
         {
           "DockedHeight": 168,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FoodImage.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\FoodImage.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Data\\FoodImage.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\FoodImage.cs",
-              "RelativeToolTip": "FoodProject\\Data\\FoodImage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "FoodController.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\FoodController.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Controllers\\FoodController.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\FoodController.cs",
+              "RelativeToolTip": "FoodProject\\Controllers\\FoodController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAHEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T01:47:50.126Z",
+              "WhenOpened": "2026-04-10T11:26:52.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DefaultController.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\DefaultController.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Controllers\\DefaultController.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\DefaultController.cs",
-              "RelativeToolTip": "FoodProject\\Controllers\\DefaultController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAFwAAAAWAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FoodRepository.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\FoodRepository.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Repositories\\FoodRepository.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\FoodRepository.cs",
+              "RelativeToolTip": "FoodProject\\Repositories\\FoodRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T11:16:53.56Z"
+              "WhenOpened": "2026-04-27T15:19:06.008Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
+              "Title": "FoodUpdate.cshtml",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Food\\FoodUpdate.cshtml",
+              "RelativeDocumentMoniker": "FoodProject\\Views\\Food\\FoodUpdate.cshtml",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Food\\FoodUpdate.cshtml",
+              "RelativeToolTip": "FoodProject\\Views\\Food\\FoodUpdate.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAC0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-11T02:11:55.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BasketDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml",
+              "RelativeDocumentMoniker": "FoodProject\\Views\\Order\\BasketDetails.cshtml",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml*",
+              "RelativeToolTip": "FoodProject\\Views\\Order\\BasketDetails.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-10T00:41:59.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "FoodProject\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T15:19:07.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\AdminOrdersController.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Controllers\\AdminOrdersController.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\AdminOrdersController.cs",
+              "RelativeToolTip": "FoodProject\\Controllers\\AdminOrdersController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-04T14:16:26.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_SiteLayout.cshtml",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
+              "RelativeDocumentMoniker": "FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
+              "RelativeToolTip": "FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-04T13:49:00.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Products.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Default\\Products.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Default\\Products.cshtml",
@@ -483,71 +542,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FoodController.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\FoodController.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Controllers\\FoodController.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\FoodController.cs",
-              "RelativeToolTip": "FoodProject\\Controllers\\FoodController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHEAAAADAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "DefaultController.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\DefaultController.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Controllers\\DefaultController.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\DefaultController.cs",
+              "RelativeToolTip": "FoodProject\\Controllers\\DefaultController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAFwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T11:26:52.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T11:16:53.56Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FoodRepository.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\FoodRepository.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Repositories\\FoodRepository.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\FoodRepository.cs",
-              "RelativeToolTip": "FoodProject\\Repositories\\FoodRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "FoodImage.cs",
+              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\FoodImage.cs",
+              "RelativeDocumentMoniker": "FoodProject\\Data\\FoodImage.cs",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\FoodImage.cs",
+              "RelativeToolTip": "FoodProject\\Data\\FoodImage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T15:19:06.008Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FoodUpdate.cshtml",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Food\\FoodUpdate.cshtml",
-              "RelativeDocumentMoniker": "FoodProject\\Views\\Food\\FoodUpdate.cshtml",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Food\\FoodUpdate.cshtml",
-              "RelativeToolTip": "FoodProject\\Views\\Food\\FoodUpdate.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAC0AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-11T02:11:55.026Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T01:47:50.126Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "FoodProject\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T15:19:07.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "AdminOrdersController.cs",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\AdminOrdersController.cs",
-              "RelativeDocumentMoniker": "FoodProject\\Controllers\\AdminOrdersController.cs",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\AdminOrdersController.cs",
-              "RelativeToolTip": "FoodProject\\Controllers\\AdminOrdersController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T14:16:26.522Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "FoodDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Food\\FoodDetails.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Food\\FoodDetails.cshtml",
@@ -555,12 +578,11 @@
               "RelativeToolTip": "FoodProject\\Views\\Food\\FoodDetails.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAiwDIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-11T02:11:07.604Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-11T02:11:07.604Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Food.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\Models\\Food.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\Models\\Food.cs",
@@ -568,12 +590,11 @@
               "RelativeToolTip": "FoodProject\\Data\\Models\\Food.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T12:40:41.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T12:40:41.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Default\\Contact.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Default\\Contact.cshtml",
@@ -585,7 +606,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\appsettings.json",
               "RelativeDocumentMoniker": "FoodProject\\appsettings.json",
@@ -597,7 +618,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\Models\\Order.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\Models\\Order.cs",
@@ -609,19 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "BasketDetails.cshtml",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml",
-              "RelativeDocumentMoniker": "FoodProject\\Views\\Order\\BasketDetails.cshtml",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml",
-              "RelativeToolTip": "FoodProject\\Views\\Order\\BasketDetails.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-10T00:41:59.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
               "RelativeDocumentMoniker": "FoodProject\\wwwroot\\ETicaretTema\\css\\style.css",
@@ -633,7 +642,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\Models\\OrderDetail.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\Models\\OrderDetail.cs",
@@ -645,7 +654,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "FoodProject\\Controllers\\OrderController.cs",
@@ -657,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Footer.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Default\\Footer.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Default\\Footer.cshtml",
@@ -669,7 +678,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Subscribe.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Default\\Subscribe.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Default\\Subscribe.cshtml",
@@ -681,19 +690,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "_SiteLayout.cshtml",
-              "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
-              "RelativeDocumentMoniker": "FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
-              "RelativeToolTip": "FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
-              "ViewState": "AgIAALIAAAAAAAAAAAAAAEoAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-04T13:49:00.325Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "FoodProject\\wwwroot\\css\\site.css",
@@ -705,7 +702,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "PaymentAdd.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\PaymentAdd.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Order\\PaymentAdd.cshtml",
@@ -717,7 +714,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Slider.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Default\\Slider.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Default\\Slider.cshtml",
@@ -729,7 +726,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Startup.cs",
               "RelativeDocumentMoniker": "FoodProject\\Startup.cs",
@@ -741,7 +738,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "PayPalClient.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Services\\PayPalClient.cs",
               "RelativeDocumentMoniker": "FoodProject\\Services\\PayPalClient.cs",
@@ -753,7 +750,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "FoodProject.csproj",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\FoodProject.csproj",
               "RelativeDocumentMoniker": "FoodProject\\FoodProject.csproj",
@@ -765,7 +762,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "ShippingDto.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\ShippingDto.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\ShippingDto.cs",
@@ -777,7 +774,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "20260429175336_int5.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Migrations\\20260429175336_int5.cs",
               "RelativeDocumentMoniker": "FoodProject\\Migrations\\20260429175336_int5.cs",
@@ -789,7 +786,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Shopping.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\Models\\Shopping.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\Models\\Shopping.cs",
@@ -801,7 +798,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Data\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "FoodProject\\Data\\Models\\Payment.cs",
