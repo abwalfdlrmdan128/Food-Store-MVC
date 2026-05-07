@@ -438,8 +438,12 @@
       "DocumentGroups": [
         {
           "DockedHeight": 168,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -483,8 +487,8 @@
               "Title": "BasketDetails.cshtml",
               "DocumentMoniker": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml",
               "RelativeDocumentMoniker": "FoodProject\\Views\\Order\\BasketDetails.cshtml",
-              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml*",
-              "RelativeToolTip": "FoodProject\\Views\\Order\\BasketDetails.cshtml*",
+              "ToolTip": "C:\\Users\\UG\\Documents\\GitHub\\Food-Store-MVC\\Food Shop\\FoodProject\\Views\\Order\\BasketDetails.cshtml",
+              "RelativeToolTip": "FoodProject\\Views\\Order\\BasketDetails.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-04-10T00:41:59.46Z",
@@ -551,10 +555,6 @@
               "ViewState": "AgIAADEAAAAAAAAAAAAAAFwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T11:16:53.56Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",

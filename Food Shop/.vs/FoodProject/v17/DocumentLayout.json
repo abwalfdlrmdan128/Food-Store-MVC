@@ -438,12 +438,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 168,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -454,8 +450,7 @@
               "RelativeToolTip": "FoodProject\\Controllers\\FoodController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAAAHEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T11:26:52.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T11:26:52.361Z"
             },
             {
               "$type": "Document",
@@ -516,8 +511,7 @@
               "RelativeToolTip": "FoodProject\\Controllers\\AdminOrdersController.cs",
               "ViewState": "AgIAADAAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-04T14:16:26.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-04T14:16:26.522Z"
             },
             {
               "$type": "Document",
@@ -529,8 +523,7 @@
               "RelativeToolTip": "FoodProject\\Views\\Shared\\_SiteLayout.cshtml",
               "ViewState": "AgIAAGYAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-04T13:49:00.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-04T13:49:00.325Z"
             },
             {
               "$type": "Document",
@@ -1731,6 +1724,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T11:24:42.589Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             }
           ]
         },
