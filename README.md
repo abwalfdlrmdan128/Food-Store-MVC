@@ -46,3 +46,20 @@
 --
 - **AdminAboutsPageDetails**  
 ![AdminAboutsPageDetails](/Food%20Shop/StoreScreens/AboutDetails.png)
+--
+## Requirements
+- .NET SDK
+- SQL Server
+- Redis Server
+
+## Redis Setup
+1. Install Redis on your machine.
+2. Start Redis Server.
+3. Make sure Redis is running on localhost:6379.
+4. Run the Ecommerce MVC.
+
+{
+  "Redis": {
+    "ConnectionString": "localhost:6379"
+  }
+}

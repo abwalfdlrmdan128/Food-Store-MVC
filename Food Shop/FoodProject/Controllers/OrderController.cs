@@ -3,9 +3,13 @@ using FoodProject.Data.Models;
 using FoodProject.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Differencing;
 using Microsoft.EntityFrameworkCore;
+using StackExchange.Redis;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace FoodProject.Controllers
@@ -14,28 +18,57 @@ namespace FoodProject.Controllers
     public class OrderController : Controller
     {
         Context context = new Context();
+        private readonly IDatabase _database;
         private readonly PayPalClient _payPalClient;
-        public OrderController(PayPalClient payPalClient)
+        public OrderController(PayPalClient payPalClient, IConnectionMultiplexer redis)
         {
             _payPalClient = payPalClient;
+            _database = redis.GetDatabase();
         }
         //  Add to Cart
+       
         public IActionResult Index(int id)
         {
-            if (!User.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Login");
+            if (!User.Identity.IsAuthenticated)return RedirectToAction("Index", "Login");
 
             var userName = User.Identity.Name;
+
             var userId = context.Users
                 .Where(x => x.UserName == userName)
                 .Select(x => x.Id)
                 .FirstOrDefault();
 
+            /*
+             List<Shopping> basket;
+
+            if (basketJson.IsNullOrEmpty)
+          {
+                basket = new List<Shopping>();
+            }
+            else
+          {
+    basket = JsonSerializer.Deserialize<List<Shopping>>(
+        basketJson.ToString()
+    );
+
+    if (basket == null)
+    {
+        basket = new List<Shopping>();
+    }
+}
+             */
             var food = context.Foods.Find(id);
             if (food == null) return NotFound();
 
-            var existing = context.Shoppings
-                .FirstOrDefault(x => x.FoodID == id && x.AppUserID == userId);
+            // Get user's basket from Redis
+            var key = $"basket:{userId}";
+
+            var basketJson = _database.StringGet(key);
+
+            var basket = basketJson.IsNullOrEmpty ? new List<Shopping>() : JsonSerializer.Deserialize<List<Shopping>>(basketJson.ToString()) ?? new List<Shopping>();
+
+            // Check if food already exists
+            var existing = basket.FirstOrDefault(x => x.FoodID == id);
 
             if (existing != null)
             {
@@ -43,7 +76,7 @@ namespace FoodProject.Controllers
             }
             else
             {
-                context.Shoppings.Add(new Shopping
+                basket.Add(new Shopping
                 {
                     FoodID = id,
                     AppUserID = userId,
@@ -52,26 +85,35 @@ namespace FoodProject.Controllers
                 });
             }
 
-            context.SaveChanges();
+            // Save basket in Redis
+            _database.StringSet(key, JsonSerializer.Serialize(basket));
+
             return RedirectToAction("Index", "Default");
         }
 
-        //  Basket
+        // Basket
         public IActionResult BasketDetails()
         {
-            if (!User.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Login");
+            if (!User.Identity.IsAuthenticated) return RedirectToAction("Index", "Login");
 
             var userName = User.Identity.Name;
+
             var userId = context.Users
                 .Where(x => x.UserName == userName)
                 .Select(x => x.Id)
                 .FirstOrDefault();
 
-            var basket = context.Shoppings
-                .Where(x => x.AppUserID == userId)
-                .Include(x => x.Food)
-                .ToList();
+            // Get basket from Redis
+            var key = $"basket:{userId}";
+            var basketJson = _database.StringGet(key);
+
+            var basket = basketJson.IsNullOrEmpty ? new List<Shopping>(): JsonSerializer.Deserialize<List<Shopping>>(basketJson.ToString()) ?? new List<Shopping>();
+
+            // Load Food data from SQL
+            foreach (var item in basket)
+            {
+                item.Food = context.Foods.Find(item.FoodID);
+            }
 
             ViewBag.TotalPrice = basket.Sum(x => x.ShoppingPrice * x.ShoppingQuantity);
             ViewBag.BasketCount = basket.Count;
@@ -241,3 +283,4 @@ namespace FoodProject.Controllers
         }
     }
 }
+

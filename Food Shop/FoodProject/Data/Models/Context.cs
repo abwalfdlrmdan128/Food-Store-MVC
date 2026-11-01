@@ -5,10 +5,7 @@ namespace FoodProject.Data.Models
 {
     public class Context: IdentityDbContext<AppUser, AppRole, int>
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-LJL0OJS;Initial Catalog=FoodStore;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
-        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { optionsBuilder.UseSqlServer("workstation id=FoodOnlinee.mssql.somee.com;packet size=4096;user id=fadel200006_SQLLogin_2;pwd=hvajks96xf;data source=FoodOnlinee.mssql.somee.com;persist security info=False;initial catalog=FoodOnlinee;TrustServerCertificate=True"); }
         public DbSet<Food> Foods { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }

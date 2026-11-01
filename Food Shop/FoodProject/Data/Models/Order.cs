@@ -16,7 +16,7 @@ namespace FoodProject.Data.Models
         public int AppUserID { get; set; }
         public AppUser AppUser { get; set; }
 
-        public List<OrderDetail> OrderDetails { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; } // more than product in the same order
 
         public int PaymentId { get; set; }
         public Payment Payment { get; set; }
