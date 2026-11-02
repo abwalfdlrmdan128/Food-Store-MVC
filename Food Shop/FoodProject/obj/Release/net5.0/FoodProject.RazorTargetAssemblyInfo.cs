@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyProductAttribute("FoodProject")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+062e1e15d19d913c0d2b107ff5796a78f42d85ac")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ee2df9236bd03c484f2ffbd9f5a02c92e0a2771")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FoodProject.Views")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 

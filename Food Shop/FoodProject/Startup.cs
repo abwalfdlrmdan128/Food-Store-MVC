@@ -1,3 +1,4 @@
+using FoodProject.Data;
 using FoodProject.Data.Models;
 using FoodProject.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -73,16 +74,22 @@ namespace FoodProject
 
             //    config.Filters.Add(new AuthorizeFilter(policy));
             //});
-
+           
         }
 
 
 
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure( IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // ? get localization options
-            var locOptions = app.ApplicationServices.GetService<RequestLocalizationOptions>();
+            // Database Seeding
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                DataSeeding.SeedUserAsync(scope.ServiceProvider).GetAwaiter().GetResult();
+            }
+
+            var locOptions = app.ApplicationServices .GetService<RequestLocalizationOptions>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

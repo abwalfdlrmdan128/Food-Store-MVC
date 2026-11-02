@@ -9,13 +9,15 @@ using System.Linq;
 
 namespace FoodProject.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = ("Admin"))]
+   
     public class AboutController : Controller
     {
         Context context = new Context();
 
         // GET: AboutController all abouts
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var about = context.Abouts.ToList();
@@ -23,6 +25,7 @@ namespace FoodProject.Controllers
             return View(about);
         }
         // GET: AboutController/Details/id
+        
         [HttpGet]
         public IActionResult AboutUpdate(int id)
         {
@@ -104,7 +107,8 @@ namespace FoodProject.Controllers
             return RedirectToAction("Index", "About");
         }
 
-        [HttpGet]
+        [HttpGet] 
+        [AllowAnonymous]
         public IActionResult AboutDetails(int id)
         {
             var AboutId = context.Abouts.Find(id);

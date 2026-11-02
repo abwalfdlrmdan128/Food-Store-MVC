@@ -3360,6 +3360,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resimler\46e44fc8-5ed2-4f1f-89ca-8ad49aaec828.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resimler\5ca5f236-16ad-43bb-bb29-df21fa5b698d.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>FoodProject</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FoodProject</BasePath>
+      <RelativePath>Resimler\5ca5f236-16ad-43bb-bb29-df21fa5b698d.jpg</RelativePath>
+      <AssetKind></AssetKind>
+      <AssetMode></AssetMode>
+      <AssetRole></AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resimler\5ca5f236-16ad-43bb-bb29-df21fa5b698d.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resimler\6c9da59c-7a55-4efa-9f0f-98d46ff626e4.png))">
       <SourceType>Package</SourceType>
       <SourceId>FoodProject</SourceId>

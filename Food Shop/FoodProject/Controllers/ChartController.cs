@@ -74,7 +74,8 @@ namespace FoodProject.Controllers
 
 
 
-        // Statistics
+
+        //Statistics
         public IActionResult Statistics()
         {
             Context context = new Context();
@@ -91,14 +92,14 @@ namespace FoodProject.Controllers
                 .FirstOrDefault();
 
             var vegetableCount = context.Foods
-                .Where(x => x.CategoryID == vegetableCategoryId)
-                .Count();
+                .Count(x => x.CategoryID == vegetableCategoryId);
+
             ViewBag.vegetableCount = vegetableCount;
 
             var orderCount = context.Payments.Count();
             ViewBag.orderCount = orderCount;
 
-            var totalStock = context.Foods.Sum(x => x.Stock);
+            var totalStock = context.Foods.Sum(x => (int?)x.Stock) ?? 0;
             ViewBag.totalStock = totalStock;
 
             var userCount = context.Users.Count();
@@ -108,18 +109,21 @@ namespace FoodProject.Controllers
                 .OrderByDescending(x => x.Stock)
                 .Select(y => y.Name)
                 .FirstOrDefault();
-            ViewBag.maxStockFood = maxStockFood;
+
+            ViewBag.maxStockFood = maxStockFood ?? "No Food Available";
 
             var minStockFood = context.Foods
                 .OrderBy(x => x.Stock)
                 .Select(y => y.Name)
                 .FirstOrDefault();
-            ViewBag.minStockFood = minStockFood;
+
+            ViewBag.minStockFood = minStockFood ?? "No Food Available";
 
             var averageFoodPrice = context.Foods
-                .Average(x => x.Price)
-                .ToString("0.00");
-            ViewBag.averageFoodPrice = averageFoodPrice;
+                .Select(x => (double?)x.Price)
+                .Average() ?? 0;
+
+            ViewBag.averageFoodPrice = averageFoodPrice.ToString("0.00");
 
             var fruitCategoryId = context.Categories
                 .Where(x => x.CategoryName.ToLower() == "fruits")
@@ -128,21 +132,95 @@ namespace FoodProject.Controllers
 
             var totalFruitStock = context.Foods
                 .Where(y => y.CategoryID == fruitCategoryId)
-                .Sum(x => x.Stock);
+                .Sum(x => (int?)x.Stock) ?? 0;
+
             ViewBag.totalFruitStock = totalFruitStock;
 
             var totalVegetableStock = context.Foods
                 .Where(y => y.CategoryID == vegetableCategoryId)
-                .Sum(x => x.Stock);
+                .Sum(x => (int?)x.Stock) ?? 0;
+
             ViewBag.totalVegetableStock = totalVegetableStock;
 
             var mostExpensiveFood = context.Foods
                 .OrderByDescending(x => x.Price)
                 .Select(y => y.Name)
                 .FirstOrDefault();
-            ViewBag.mostExpensiveFood = mostExpensiveFood;
+
+            ViewBag.mostExpensiveFood = mostExpensiveFood ?? "No Food Available";
 
             return View();
         }
+
+        // Statistics
+        //public IActionResult Statistics()
+        //{
+        //    Context context = new Context();
+
+        //    var foodCount = context.Foods.Count();
+        //    ViewBag.foodCount = foodCount;
+
+        //    var categoryCount = context.Categories.Count();
+        //    ViewBag.categoryCount = categoryCount;
+
+        //    var vegetableCategoryId = context.Categories
+        //        .Where(x => x.CategoryName.ToLower() == "vegetables")
+        //        .Select(y => y.CategoryID)
+        //        .FirstOrDefault();
+
+        //    var vegetableCount = context.Foods
+        //        .Where(x => x.CategoryID == vegetableCategoryId)
+        //        .Count();
+        //    ViewBag.vegetableCount = vegetableCount;
+
+        //    var orderCount = context.Payments.Count();
+        //    ViewBag.orderCount = orderCount;
+
+        //    var totalStock = context.Foods.Sum(x => x.Stock);
+        //    ViewBag.totalStock = totalStock;
+
+        //    var userCount = context.Users.Count();
+        //    ViewBag.userCount = userCount;
+
+        //    var maxStockFood = context.Foods
+        //        .OrderByDescending(x => x.Stock)
+        //        .Select(y => y.Name)
+        //        .FirstOrDefault();
+        //    ViewBag.maxStockFood = maxStockFood;
+
+        //    var minStockFood = context.Foods
+        //        .OrderBy(x => x.Stock)
+        //        .Select(y => y.Name)
+        //        .FirstOrDefault();
+        //    ViewBag.minStockFood = minStockFood;
+
+        //    var averageFoodPrice = context.Foods
+        //        .Average(x => x.Price)
+        //        .ToString("0.00");
+        //    ViewBag.averageFoodPrice = averageFoodPrice;
+
+        //    var fruitCategoryId = context.Categories
+        //        .Where(x => x.CategoryName.ToLower() == "fruits")
+        //        .Select(y => y.CategoryID)
+        //        .FirstOrDefault();
+
+        //    var totalFruitStock = context.Foods
+        //        .Where(y => y.CategoryID == fruitCategoryId)
+        //        .Sum(x => x.Stock);
+        //    ViewBag.totalFruitStock = totalFruitStock;
+
+        //    var totalVegetableStock = context.Foods
+        //        .Where(y => y.CategoryID == vegetableCategoryId)
+        //        .Sum(x => x.Stock);
+        //    ViewBag.totalVegetableStock = totalVegetableStock;
+
+        //    var mostExpensiveFood = context.Foods
+        //        .OrderByDescending(x => x.Price)
+        //        .Select(y => y.Name)
+        //        .FirstOrDefault();
+        //    ViewBag.mostExpensiveFood = mostExpensiveFood;
+
+        //    return View();
+        //}
     }
 }

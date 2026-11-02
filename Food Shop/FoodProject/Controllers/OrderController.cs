@@ -121,40 +121,97 @@ namespace FoodProject.Controllers
             return View(basket);
         }
 
-        //  Delete
-
+        // Delete
         public IActionResult DeleteProduct(int id)
         {
-            var item = context.Shoppings.Find(id);
-            if (item != null)
+            var userName = User.Identity.Name;
+
+            var userId = context.Users
+                .Where(x => x.UserName == userName)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            var key = $"basket:{userId}";
+
+            var basketJson = _database.StringGet(key);
+
+            if (!basketJson.IsNullOrEmpty)
             {
-                context.Shoppings.Remove(item);
-                context.SaveChanges();
+                var basket = JsonSerializer.Deserialize<List<Shopping>>(basketJson.ToString()) ?? new List<Shopping>();
+
+                var item = basket.FirstOrDefault(x => x.FoodID == id);
+
+                if (item != null)
+                {
+                    basket.Remove(item);
+
+                    _database.StringSet(key, JsonSerializer.Serialize(basket));
+                }
             }
+
             return RedirectToAction("BasketDetails");
         }
-
         //  Plus
+ 
         public IActionResult PlusProduct(int id)
         {
-            var item = context.Shoppings.Find(id);
-            if (item != null)
+            var userName = User.Identity.Name;
+
+            var userId = context.Users
+                .Where(x => x.UserName == userName)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            var key = $"basket:{userId}";
+
+            var basketJson = _database.StringGet(key);
+
+            if (!basketJson.IsNullOrEmpty)
             {
-                item.ShoppingQuantity++;
-                context.SaveChanges();
+                var basket = JsonSerializer.Deserialize<List<Shopping>>( basketJson.ToString()) ?? new List<Shopping>();
+
+                var item = basket.FirstOrDefault(x => x.FoodID == id);
+
+                if (item != null)
+                {
+                    item.ShoppingQuantity++;
+
+                    _database.StringSet(key, JsonSerializer.Serialize(basket));
+                }
             }
+
             return RedirectToAction("BasketDetails");
         }
 
         //  Minus (fixed bug)
         public IActionResult MinusProduct(int id)
         {
-            var item = context.Shoppings.Find(id);
-            if (item != null && item.ShoppingQuantity > 1)
+
+            var userName = User.Identity.Name;
+
+            var userId = context.Users
+                .Where(x => x.UserName == userName)
+                .Select(x => x.Id)
+                .FirstOrDefault();
+
+            var key = $"basket:{userId}";
+
+            var basketJson = _database.StringGet(key);
+
+            if (!basketJson.IsNullOrEmpty)
             {
-                item.ShoppingQuantity--;
-                context.SaveChanges();
+                var basket = JsonSerializer.Deserialize<List<Shopping>>(basketJson.ToString()) ?? new List<Shopping>();
+
+                var item = basket.FirstOrDefault(x => x.FoodID == id);
+
+                if (item != null)
+                {
+                    item.ShoppingQuantity--;
+
+                    _database.StringSet(key, JsonSerializer.Serialize(basket));
+                }
             }
+
             return RedirectToAction("BasketDetails");
         }
 
@@ -194,10 +251,10 @@ namespace FoodProject.Controllers
                 .Select(x => x.Id)
                 .FirstOrDefault();
 
-            var cart = context.Shoppings
-                .Where(x => x.AppUserID == userId)
-                .Include(x => x.Food)
-                .ToList();
+            var key = $"basket:{userId}";
+            var cartJson = _database.StringGet(key);
+
+            var cart = cartJson.IsNullOrEmpty ? new List<Shopping>() : JsonSerializer.Deserialize<List<Shopping>>(cartJson.ToString())?? new List<Shopping>();
 
             if (!cart.Any())
                 return BadRequest("Cart empty");
@@ -227,10 +284,12 @@ namespace FoodProject.Controllers
                 .Select(x => x.Id)
                 .FirstOrDefault();
 
-            var cart = context.Shoppings
-                .Where(x => x.AppUserID == userId)
-                .Include(x => x.Food)
-                .ToList();
+
+            var key = $"basket:{userId}";
+            var cartJson = _database.StringGet(key);
+
+            var cart = cartJson.IsNullOrEmpty ? new List<Shopping>() : JsonSerializer.Deserialize<List<Shopping>>(cartJson.ToString()) ?? new List<Shopping>();
+
 
             double total = cart.Sum(x => x.ShoppingQuantity * x.Food.Price);
 
@@ -249,7 +308,7 @@ namespace FoodProject.Controllers
             context.SaveChanges();
 
             // Order
-            var order = new Order
+            var order = new FoodProject.Data.Models.Order
             {
                 AppUserID = userId,
                 PaymentId = payment.PaymentId,
@@ -276,7 +335,7 @@ namespace FoodProject.Controllers
             foreach (var item in cart)
                 item.Food.Stock -= item.ShoppingQuantity;
 
-            context.Shoppings.RemoveRange(cart);
+            _database.KeyDelete(key);
             context.SaveChanges();
 
             return Ok(result);
